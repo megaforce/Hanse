@@ -83,6 +83,10 @@ auto BackEnd::setState(const QByteArray &data) -> void
 	//displayData();
 
 	isTurnActive = true;
+	emit foodResChanged();
+	emit woodResChanged();
+	emit stoneResChanged();
+	emit ironResChanged();
 }
 
 auto BackEnd::recieveTradeOffer(const QByteArray &data) -> void

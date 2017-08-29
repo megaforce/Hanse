@@ -13,21 +13,21 @@
 
 class HanseServerThread : public QObject
 {
-    Q_OBJECT
-    QTcpSocket *serverConnection;
-    QByteArray data;
-    QString username;
+	Q_OBJECT
+	QTcpSocket *serverConnection;
+	QByteArray data;
+	QString username;
 
 public:
-    explicit HanseServerThread(QObject *parent = nullptr);
+	explicit HanseServerThread(QObject *parent = nullptr);
 
 signals:
-    void dataRecieved(const QByteArray &data);
+	void dataRecieved(const QByteArray &data);
 public slots:
-    void sendData(const QByteArray &data);
-    void readyRead();
-    void introduceToServer();
-    void startConnection(QString serverAddress, QString un);
+	void sendData(const QByteArray &data);
+	void readyRead();
+	void introduceToServer();
+	void startConnection(QString serverAddress, QString un);
 };
 
 #endif // HANSESERVERTHREAD_H

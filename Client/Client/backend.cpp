@@ -54,29 +54,29 @@ auto BackEnd::setState(const QByteArray &data) -> void
 	qDebug() << "setState";
 
 	// converts data back to json
-       QJsonDocument stateDataDocument = QJsonDocument::fromBinaryData(data);
-       QJsonObject stateData = stateDataDocument.object();
+	QJsonDocument stateDataDocument = QJsonDocument::fromBinaryData(data);
+	QJsonObject stateData = stateDataDocument.object();
 
-       // returns if data is not meant for state
-       if(static_cast<codes_t>(stateData["type"].toInt()) != codes_t::STATE_DATA) return;
+	// returns if data is not meant for state
+	if(static_cast<codes_t>(stateData["type"].toInt()) != codes_t::STATE_DATA) return;
 
-       // retrieve inventory from data
-       inventory.wood = stateData["amountWood"].toInt();
-       inventory.stone= stateData["amountStone"].toInt();
-       inventory.iron = stateData["amountIron"].toInt();
-       inventory.food = stateData["amountFood"].toInt();
+	// retrieve inventory from data
+	inventory.wood = stateData["amountWood"].toInt();
+	inventory.stone= stateData["amountStone"].toInt();
+	inventory.iron = stateData["amountIron"].toInt();
+	inventory.food = stateData["amountFood"].toInt();
 
-       // read all players
-       QJsonArray playerArray = stateData["players"].toArray();
-       players.clear();
-       foreach(QJsonValue val, playerArray)
-       {
-	   players << val.toString();
-       }
-       //may be unnecessary
-       //displayData();
+	// read all players
+	QJsonArray playerArray = stateData["players"].toArray();
+	players.clear();
+	foreach(QJsonValue val, playerArray)
+	{
+		players << val.toString();
+	}
+	//may be unnecessary
+	//displayData();
 
-       isTurnActive = true;
+	isTurnActive = true;
 }
 
 auto BackEnd::recieveTradeOffer(const QByteArray &data) -> void

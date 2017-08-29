@@ -20,7 +20,7 @@ BackEnd::BackEnd(QObject *parent) :
 	connect(this, SIGNAL(startConnection(QString, QString)), serverConnection, SLOT(startConnection(QString,QString)));
 	serverConnection->moveToThread(serverThread);
 
-	username = "test1";
+	username = "";
 	inventory.food  = 1000;
 	inventory.wood  = 1000;
 	inventory.stone = 1000;
@@ -33,7 +33,7 @@ BackEnd::BackEnd(QObject *parent) :
 auto BackEnd::setTradeProperty(const QString &tradeProperty, const QString &tradeValue) -> void
 {
 	qDebug() << "trade[" + tradeProperty + "] = " + tradeValue;
-	tradeData[tradeProperty] = tradeValue;
+	tradeData[tradeProperty] = tradeValue.toInt();
 }
 
 auto BackEnd::sendTrade() -> void

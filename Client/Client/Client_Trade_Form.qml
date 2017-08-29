@@ -21,11 +21,7 @@ Rectangle{
     visible: false
     enabled: false
     color: "Black"
-    BackEnd {
-        id: backend
-    }
     Item {
-
         TextField{
             id: blank
             visible: false
@@ -38,8 +34,6 @@ Rectangle{
             anchors.top: parent.top
             color: "black"
         }
-
-
         TextField
         {
             id: stone
@@ -51,9 +45,6 @@ Rectangle{
             color: "Green"
             opacity: 1000
         }
-
-
-
         TextField
         {
             id: iron
@@ -88,57 +79,57 @@ Rectangle{
             opacity: 1000
         }
         TextField{
-        id: player_offer
-        text: "Player offer"
-        enabled: false
-        anchors.left: blank.right
-        anchors.top: blank.top
-        anchors.margins: 10
-        anchors.topMargin: 0
-        color: "Green"
-        opacity: 1000
+            id: player_offer
+            text: "Player offer"
+            enabled: false
+            anchors.left: blank.right
+            anchors.top: blank.top
+            anchors.margins: 10
+            anchors.topMargin: 0
+            color: "Green"
+            opacity: 1000
         }
         TextField{
-        id: stone_client_offer
-        text:""
-        enabled: false
-        anchors.left: stone.right
-        anchors.top: stone.top
-        anchors.margins: 10
-        anchors.topMargin: 0
-        color: "Green"
-        opacity: 1000
+            id: stone_client_offer
+            text:""
+            enabled: false
+            anchors.left: stone.right
+            anchors.top: stone.top
+            anchors.margins: 10
+            anchors.topMargin: 0
+            color: "Green"
+            opacity: 1000
 
         }
         TextField{
-        id: iron_client_offer
-        text:""
-        enabled: false
-        anchors.left: iron.right
-        anchors.top: stone_client_offer.bottom
-        anchors.margins: 10
-        color: "Green"
-        opacity: 1000
+            id: iron_client_offer
+            text:""
+            enabled: false
+            anchors.left: iron.right
+            anchors.top: stone_client_offer.bottom
+            anchors.margins: 10
+            color: "Green"
+            opacity: 1000
         }
         TextField{
-        id: wood_client_offer
-        text:""
-        enabled: false
-        anchors.left: wood.right
-        anchors.top: iron_client_offer.bottom
-        anchors.margins: 10
-        color: "Green"
-        opacity: 1000
+            id: wood_client_offer
+            text:""
+            enabled: false
+            anchors.left: wood.right
+            anchors.top: iron_client_offer.bottom
+            anchors.margins: 10
+            color: "Green"
+            opacity: 1000
         }
         TextField{
-        id: food_client_offer
-        text:""
-        enabled: false
-        anchors.left: food.right
-        anchors.top: wood_client_offer.bottom
-        anchors.margins: 10
-        color: "Green"
-        opacity: 1000
+            id: food_client_offer
+            text:""
+            enabled: false
+            anchors.left: food.right
+            anchors.top: wood_client_offer.bottom
+            anchors.margins: 10
+            color: "Green"
+            opacity: 1000
         }
         TextField{
             id: player_demand
@@ -150,8 +141,8 @@ Rectangle{
             anchors.topMargin: 0
             color: "Green"
             opacity: 1000
-            }
-            TextField{
+        }
+        TextField{
             id: stone_client_demand
             text:""
             enabled: false
@@ -162,8 +153,8 @@ Rectangle{
             color: "Green"
             opacity: 1000
 
-            }
-            TextField{
+        }
+        TextField{
             id: iron_client_demand
             text:""
             enabled: false
@@ -172,8 +163,8 @@ Rectangle{
             anchors.margins: 10
             color: "Green"
             opacity: 1000
-            }
-            TextField{
+        }
+        TextField{
             id: wood_client_demand
             text:""
             enabled: false
@@ -182,8 +173,8 @@ Rectangle{
             anchors.margins: 10
             color: "Green"
             opacity: 1000
-            }
-            TextField{
+        }
+        TextField{
             id: food_client_demand
             text:""
             enabled: false
@@ -192,8 +183,7 @@ Rectangle{
             anchors.margins: 10
             color: "Green"
             opacity: 1000
-            }
-
+        }
         Button{
             id: client_trade
             text: "TRADE"
@@ -204,7 +194,6 @@ Rectangle{
             MouseArea {
 
             }
-
         }
         Button{
             id: client_decline

@@ -20,7 +20,7 @@ BackEnd::BackEnd(QObject *parent) :
 	connect(this, SIGNAL(startConnection(QString, QString)), serverConnection, SLOT(startConnection(QString,QString)));
 	serverConnection->moveToThread(serverThread);
 
-	username = "test";
+	username = "test1";
 	inventory.food  = 1000;
 	inventory.wood  = 1000;
 	inventory.stone = 1000;

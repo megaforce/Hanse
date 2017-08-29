@@ -7,6 +7,7 @@ BackEnd::BackEnd(QObject *parent) :
 	qDebug() << "init";
 
 	isTurnActive = false;
+	tradeData["type"] = static_cast<int>(codes_t::TRADE_REQUEST);
 
 	serverConnection = new HanseServerThread();
 	QThread *serverThread = new QThread(this);
@@ -34,6 +35,11 @@ auto BackEnd::setTradeProperty(const QString &tradeProperty, const QString &trad
 {
 	qDebug() << "trade[" + tradeProperty + "] = " + tradeValue;
 	tradeData[tradeProperty] = tradeValue.toInt();
+}
+
+auto BackEnd::setTradePartner(const qint32 &num) -> void
+{
+	tradeData["toPlayer"] = players.at(num);
 }
 
 auto BackEnd::sendTrade() -> void

@@ -328,7 +328,6 @@ Rectangle{
                     food_resource.clear();
                 }
             }
-
         }
         Button{
             id: send

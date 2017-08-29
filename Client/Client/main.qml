@@ -183,7 +183,7 @@ Window {
                                 trade_form.visible = true
                                 trade_form.enabled = true
                                 trade_menu_3.visible = false
-                                backend.setTradePartner(2S);
+                                backend.setTradePartner(2);
                             }
                         }
                     }

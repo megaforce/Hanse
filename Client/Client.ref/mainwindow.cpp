@@ -75,7 +75,7 @@ MainWindow::MainWindow(QWidget *parent) :
     serverConnection->moveToThread(serverThread);
     username = screen.getUsername();
     connect(this, SIGNAL(sendData(QByteArray)), serverConnection, SLOT(sendData(QByteArray)));
-    emit startConnection(QString("192.168.1.173"), username);
+    emit startConnection(QString("93.103.236.159"), username);
 }
 
 MainWindow::~MainWindow()

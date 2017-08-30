@@ -79,8 +79,6 @@ auto BackEnd::setState(const QByteArray &data) -> void
 	{
 		players << val.toString();
 	}
-	//may be unnecessary
-	//displayData();
 
 	isTurnActive = true;
 	emit foodResChanged();

@@ -84,61 +84,61 @@ Rectangle{
             readOnly: true
         }
         TextField{
-        id: player_offer
-        text: "Player offer"
-        enabled: true
-        anchors.left: blank.right
-        anchors.top: blank.top
-        anchors.margins: 10
-        anchors.topMargin: 0
-        color: "Green"
-        opacity: 1000
-        readOnly: true
+            id: player_offer
+            text: "Player offer"
+            enabled: true
+            anchors.left: blank.right
+            anchors.top: blank.top
+            anchors.margins: 10
+            anchors.topMargin: 0
+            color: "Green"
+            opacity: 1000
+            readOnly: true
         }
         TextField{
-        id: stone_client_offer
-        text:""
-        enabled: true
-        anchors.left: stone.right
-        anchors.top: stone.top
-        anchors.margins: 10
-        anchors.topMargin: 0
-        color: "Green"
-        opacity: 1000
-        readOnly: true
+            id: stone_client_offer
+            text:""
+            enabled: true
+            anchors.left: stone.right
+            anchors.top: stone.top
+            anchors.margins: 10
+            anchors.topMargin: 0
+            color: "Green"
+            opacity: 1000
+            readOnly: true
         }
         TextField{
-        id: iron_client_offer
-        text:""
-        enabled: true
-        anchors.left: iron.right
-        anchors.top: stone_client_offer.bottom
-        anchors.margins: 10
-        color: "Green"
-        opacity: 1000
-        readOnly: true
+            id: iron_client_offer
+            text:""
+            enabled: true
+            anchors.left: iron.right
+            anchors.top: stone_client_offer.bottom
+            anchors.margins: 10
+            color: "Green"
+            opacity: 1000
+            readOnly: true
         }
         TextField{
-        id: wood_client_offer
-        text:""
-        enabled: true
-        anchors.left: wood.right
-        anchors.top: iron_client_offer.bottom
-        anchors.margins: 10
-        color: "Green"
-        opacity: 1000
-        readOnly: true
+            id: wood_client_offer
+            text:""
+            enabled: true
+            anchors.left: wood.right
+            anchors.top: iron_client_offer.bottom
+            anchors.margins: 10
+            color: "Green"
+            opacity: 1000
+            readOnly: true
         }
         TextField{
-        id: food_client_offer
-        text:""
-        enabled: true
-        anchors.left: food.right
-        anchors.top: wood_client_offer.bottom
-        anchors.margins: 10
-        color: "Green"
-        opacity: 1000
-        readOnly: true
+            id: food_client_offer
+            text:""
+            enabled: true
+            anchors.left: food.right
+            anchors.top: wood_client_offer.bottom
+            anchors.margins: 10
+            color: "Green"
+            opacity: 1000
+            readOnly: true
         }
         TextField{
             id: player_demand
@@ -152,7 +152,7 @@ Rectangle{
             opacity: 1000
             readOnly: true
             }
-            TextField{
+        TextField{
             id: stone_client_demand
             text:""
             enabled: true
@@ -163,8 +163,8 @@ Rectangle{
             color: "Green"
             opacity: 1000
             readOnly: true
-            }
-            TextField{
+        }
+        TextField{
             id: iron_client_demand
             text:""
             enabled: true
@@ -174,8 +174,8 @@ Rectangle{
             color: "Green"
             opacity: 1000
             readOnly: true
-            }
-            TextField{
+        }
+        TextField{
             id: wood_client_demand
             text:""
             enabled: true
@@ -185,8 +185,8 @@ Rectangle{
             color: "Green"
             opacity: 1000
             readOnly: true
-            }
-            TextField{
+        }
+        TextField{
             id: food_client_demand
             text:""
             enabled: true
@@ -196,81 +196,81 @@ Rectangle{
             color: "Green"
             opacity: 1000
             readOnly: true
-            }
-            TextField
-            {
-                id: acctual
-                enabled: true
-                text: "Acctual resources"
-                anchors.margins: 10
-                anchors.topMargin: 0
-                anchors.left: player_demand.right
-                anchors.top: player_demand.top
-                color: "Green"
-                opacity: 1000
-                readOnly: true
+        }
+        TextField
+        {
+            id: acctual
+            enabled: true
+            text: "Acctual resources"
+            anchors.margins: 10
+            anchors.topMargin: 0
+            anchors.left: player_demand.right
+            anchors.top: player_demand.top
+            color: "Green"
+            opacity: 1000
+            readOnly: true
 
+        }
+        TextField
+        {
+            id: send_stone
+            anchors.margins: 10
+            anchors.leftMargin: 0
+            anchors.left: acctual.left
+            anchors.top:  acctual.bottom
+            validator: IntValidator{
+                bottom: 0;
+                top: 999999;
             }
-            TextField
-            {
-                id: send_stone
-                anchors.margins: 10
-                anchors.leftMargin: 0
-                anchors.left: acctual.left
-                anchors.top:  acctual.bottom
-                validator: IntValidator{
-                    bottom: 0;
-                    top: 999999;
-                }
-                selectByMouse: true;
-                color: "Green"
-                opacity: 1000
+            selectByMouse: true;
+            color: "Green"
+            opacity: 1000
+        }
+        TextField
+        {
+            id: send_iron
+            anchors.margins: 10
+            anchors.leftMargin: 0
+            anchors.left: send_stone.left
+            anchors.top: send_stone.bottom
+            validator: IntValidator{
+                bottom: 0;
+                top: 999999;
             }
-            TextField
-            {
-                id: send_iron
-                anchors.margins: 10
-                anchors.leftMargin: 0
-                anchors.left: send_stone.left
-                anchors.top: send_stone.bottom
-                validator: IntValidator{
-                    bottom: 0;
-                    top: 999999;
-                }
-                selectByMouse: true;
-                color: "Green"
-                opacity: 1000
+            selectByMouse: true;
+            color: "Green"
+            opacity: 1000
+        }
+        TextField
+        {
+            id: send_wood
+            anchors.margins: 10
+            anchors.leftMargin: 0
+            anchors.left: send_iron.left
+            anchors.top: send_iron.bottom
+            validator: IntValidator{
+                bottom: 0;
+                top: 999999;
             }
-            TextField
-            {
-                id: send_wood
-                anchors.margins: 10
-                anchors.leftMargin: 0
-                anchors.left: send_iron.left
-                anchors.top: send_iron.bottom
-                validator: IntValidator{
-                    bottom: 0;
-                    top: 999999;
-                }
-                selectByMouse: true;
-                color: "Green"
-                opacity: 1000
+            selectByMouse: true;
+            color: "Green"
+            opacity: 1000
+        }
+        TextField
+        {
+            id: send_food
+            anchors.margins: 10
+            anchors.leftMargin: 0
+            anchors.left: send_wood.left
+            anchors.top: send_wood.bottom
+            validator: IntValidator{
+                bottom: 0;
+                top: 999999;
             }
-            TextField
-            {
-                id: send_food
-                anchors.margins: 10
-                anchors.leftMargin: 0
-                anchors.left: send_wood.left
-                anchors.top: send_wood.bottom
-                validator: IntValidator{
-                    bottom: 0;
-                    top: 999999;
-                }
-                selectByMouse: true;
-                color: "Green"
-                opacity: 1000
-            }
+            selectByMouse: true;
+            color: "Green"
+            opacity: 1000
+        }
         Button{
             id: client_trade
             text: "TRADE"

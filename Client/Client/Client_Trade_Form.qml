@@ -151,7 +151,7 @@ Rectangle{
             color: "Green"
             opacity: 1000
             readOnly: true
-            }
+        }
         TextField{
             id: stone_client_demand
             text:""
@@ -209,7 +209,6 @@ Rectangle{
             color: "Green"
             opacity: 1000
             readOnly: true
-
         }
         TextField
         {

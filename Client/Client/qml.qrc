@@ -8,7 +8,6 @@
         <file>Trade_Form.qml</file>
         <file>Resource_Form.qml</file>
         <file>Client_Trade_Form.qml</file>
-        <file>Login_form.qml</file>
     </qresource>
     <qresource prefix="/File">
         <file>image/ship.png</file>

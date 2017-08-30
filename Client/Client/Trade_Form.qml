@@ -7,9 +7,9 @@ import trade.backend 1.0
 
 /************************************************************************************************************************
 *                                                   I have never thought                                                *
-*                                                   I'd live to see the day,                                            *
+*                                                   I'd live to see the day                                             *
 *                                                   when my code looks so bad                                           *
-*                                                   it makes me cry.                                                    *
+*                                                   it makes me cry                                                     *
 *                                                                        -Matjaz                                        *
 *                                                                                                                       *
 ************************************************************************************************************************/
@@ -21,11 +21,7 @@ Rectangle{
     visible: false
     enabled: false
     color: "Black"
-    BackEnd {
-        id: backend
-    }
     Item {
-
         TextField
         {
             id: stone
@@ -38,9 +34,6 @@ Rectangle{
             color: "Green"
             opacity: 1000
         }
-
-
-
         TextField
         {
             id: iron
@@ -335,7 +328,6 @@ Rectangle{
                     food_resource.clear();
                 }
             }
-
         }
         Button{
             id: send

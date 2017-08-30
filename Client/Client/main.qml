@@ -203,7 +203,6 @@ Window {
                     }
                 }
             }
-
         }
         Island{
             Boat{

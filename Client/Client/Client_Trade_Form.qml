@@ -13,7 +13,7 @@ import trade.backend 1.0
 *                                                                        -Matjaz                                        *
 *                                                                                                                       *
 ************************************************************************************************************************/
-// a code? A CODE? what is this india?
+// a code? A CODE? what is this a india?
 //                                  -Muf
 
 Rectangle{

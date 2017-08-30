@@ -55,7 +55,7 @@ Window {
                 }
                 Button{
                     id: connect
-                    text:"CONNECT"
+                    text: "CONNECT"
                     anchors.top: username.bottom
                     anchors.left: username.left
                     MouseArea{

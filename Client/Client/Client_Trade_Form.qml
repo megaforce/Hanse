@@ -13,7 +13,8 @@ import trade.backend 1.0
 *                                                                        -Matjaz                                        *
 *                                                                                                                       *
 ************************************************************************************************************************/
-
+// a code? A CODE? what is this a india?
+//                                   -Muf
 
 Rectangle{
     height: 320
@@ -21,11 +22,7 @@ Rectangle{
 
     enabled: true
     color: "Black"
-    BackEnd {
-        id: backend
-    }
     Item {
-
         TextField{
             id: blank
             visible: false
@@ -38,8 +35,6 @@ Rectangle{
             anchors.top: parent.top
             color: "black"
         }
-
-
         TextField
         {
             id: stone
@@ -52,9 +47,6 @@ Rectangle{
             opacity: 1000
             readOnly: true
         }
-
-
-
         TextField
         {
             id: iron
@@ -279,7 +271,6 @@ Rectangle{
                 color: "Green"
                 opacity: 1000
             }
-
         Button{
             id: client_trade
             text: "TRADE"
@@ -290,7 +281,6 @@ Rectangle{
             MouseArea {
 
             }
-
         }
         Button{
             id: client_decline

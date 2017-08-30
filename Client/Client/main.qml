@@ -83,6 +83,7 @@ Window {
         }
         Client_Trade_Form{
             id: client_trade_form
+            visible: false
             anchors.centerIn: main_map
         }
         Resource_Form{

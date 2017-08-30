@@ -121,6 +121,7 @@ Window {
                             trade_form.visible = true
                             trade_form.enabled = true
                             trade_menu_1.visible = false
+                            backend.setTradePartner(0);
                         }
                     }
                 }
@@ -168,6 +169,7 @@ Window {
                                 trade_form.visible = true
                                 trade_form.enabled = true
                                 trade_menu_2.visible = false
+                                backend.setTradePartner(1);
                             }
                         }
                     }
@@ -216,6 +218,7 @@ Window {
                                 trade_form.visible = true
                                 trade_form.enabled = true
                                 trade_menu_3.visible = false
+                                backend.setTradePartner(2);
                             }
                         }
                     }
@@ -264,6 +267,7 @@ Window {
                                 trade_form.visible = true
                                 trade_form.enabled = true
                                 trade_menu_4.visible = false
+                                backend.setTradePartner(3);
                             }
                         }
                     }

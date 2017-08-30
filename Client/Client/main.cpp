@@ -1,11 +1,16 @@
-#include "mainwindow.h"
-#include <QApplication>
+#include <QGuiApplication>
+#include <QQmlApplicationEngine>
+
+#include "backend.h"
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
-    MainWindow w;
-    w.show();
+	QGuiApplication app(argc, argv);
 
-    return a.exec();
+	qmlRegisterType<BackEnd>("trade.backend", 1, 0, "BackEnd");
+
+	QQmlApplicationEngine engine;
+	engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
+
+	return app.exec();
 }

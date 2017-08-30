@@ -13,12 +13,13 @@ void HanseNetworkHandler::startServer()
     QHostAddress nonLocalIp;
     foreach (QHostAddress ip, ipList)
     {
-        if (ip != QHostAddress::LocalHost && ip.toIPv4Address())
+	if (ip != QHostAddress::LocalHost && !ip.isNull())
         {
             nonLocalIp = ip;
             break;
         }
     }
+    nonLocalIp = QHostAddress("2a01:260:d001:f097:2c46:bfd0:4b84:6ad3");
 
     if(!listen(nonLocalIp, 20445))
     {

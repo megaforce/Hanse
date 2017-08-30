@@ -5,15 +5,15 @@
 
 class Resources : public QObject
 {
-    Q_OBJECT
+	Q_OBJECT
 public:
-    explicit Resources(QObject *parent = nullptr);
-    Resources(const Resources &rhs, QObject *parent = nullptr);
-    qint32 stone;
-    qint32 wood;
-    qint32 iron;
-    qint32 food;
-    Resources& operator=(const Resources &rhs);
+	explicit Resources(QObject *parent = nullptr);
+	Resources(const Resources &rhs, QObject *parent = nullptr);
+	qint32 stone;
+	qint32 wood;
+	qint32 iron;
+	qint32 food;
+	Resources& operator=(const Resources &rhs);
 
 signals:
 

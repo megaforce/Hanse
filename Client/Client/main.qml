@@ -26,7 +26,6 @@ Window {
         id: main_menu
         width: parent.width
         height: parent.height
-
         color: "Black"
         Button{
             id: start_game

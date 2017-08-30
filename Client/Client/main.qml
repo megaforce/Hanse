@@ -19,6 +19,8 @@ Window {
     BackEnd {
         id: backend
     }
+    width: 1440;
+    height: 900;
     visible: true
     Map{
         id: main_menu

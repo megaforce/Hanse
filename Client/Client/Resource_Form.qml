@@ -2,6 +2,14 @@ import QtQuick 2.6
 import QtQuick.Controls 1.4
 import QtQuick.Dialogs 1.2
 
+/************************************************************************************************************************
+*                                                   I mean...                                                           *
+*                                                   It works...                                                         *
+*                                                   ....Somehow...                                                      *
+*                                                                 -Matjaz                                               *
+*                                                                                                                       *
+************************************************************************************************************************/
+
 Rectangle{
     visible: true
     enabled: false
@@ -39,27 +47,31 @@ Rectangle{
         }
         TextField{
             id: food_ammount
-            text: backend.foodRes
+            text: ""
             anchors.top: food.top
             anchors.left: food.right
+
         }
         TextField{
             id: wood_ammount
-            text: backend.woodRes
+            text: ""
             anchors.top: food_ammount.bottom
             anchors.left: food_ammount.left
+
         }
         TextField{
             id: stone_ammount
-            text: backend.stoneRes
+            text: ""
             anchors.top: wood_ammount.bottom
             anchors.left: wood_ammount.left
+
         }
         TextField{
             id: iron_ammount
-            text: backend.ironRes
+            text: ""
             anchors.top: stone_ammount.bottom
             anchors.left: stone_ammount.left
+
         }
     }
 

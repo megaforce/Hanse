@@ -15,38 +15,91 @@ import trade.backend 1.0
 ************************************************************************************************************************/
 
 Window {
+
     id: root
     BackEnd {
         id: backend
     }
 
     visible: true
-    width: 1440
-    height: 900
 
-    maximumHeight: 9000
-    maximumWidth: 14400
+    maximumHeight: 1080
+    maximumWidth: 1920
 
-    minimumHeight: 90
-    minimumWidth: 144
+    minimumHeight: 1080
+    minimumWidth: 1920
 
     Map{
+    id: main_menu
+    width: parent.width
+    height: parent.height
+
+    color: "Black"
+    Button
+    {
+    id: start_game
+    anchors.centerIn: parent
+    text: "START GAME"
+    onClicked: {
+    login.visible = true
+    }
+    }
+    Login_form{
+    visible: false
+    color: red
+    id: login
+    anchors.centerIn: parent
+    Item{
+        anchors.centerIn: parent
+    TextInput{
+    id: username
+    anchors.centerIn: parent
+    anchors.top: parent.top
+    selectByMouse: true;
+    anchors.margins: 10
+    color: "Green"
+    text: "Enter username"
+    opacity: 1000
+        }
+    Button{
+    id: connect
+    text:"CONNECT"
+    anchors.top: username.bottom
+    anchors.left: username.left
+    MouseArea{
+    anchors.fill: parent
+    onClicked: {
+    main_menu.visible = false
+    main_menu.enabled = false
+        main_map.visible = true
+
+    }
+    }
+    }
+    }
+
+    }
+
+    }
+
+    Map{
+
+        visible: false
         id: main_map
         width: parent.width
         height: parent.height
         anchors.centerIn: parent
+        color: "blue"
 
         Trade_Form{
             id: trade_form
             anchors.centerIn: main_map
         }
-		
         Client_Trade_Form{
             id: client_trade_form
-            visible: false
+
             anchors.centerIn: main_map
         }
-
         Resource_Form{
             id: resources
             anchors.left: island_4.right
@@ -55,6 +108,7 @@ Window {
             anchors.leftMargin: 300
             opacity: 100000000000000
         }
+
         Island{
             Boat{
                 id: boat_1
@@ -84,7 +138,6 @@ Window {
                             trade_form.visible = true
                             trade_form.enabled = true
                             trade_menu_1.visible = false
-                            backend.setTradePartner(0);
                         }
                     }
                 }
@@ -133,7 +186,6 @@ Window {
                                 trade_form.visible = true
                                 trade_form.enabled = true
                                 trade_menu_2.visible = false
-                                backend.setTradePartner(1);
                             }
                         }
                     }
@@ -183,7 +235,6 @@ Window {
                                 trade_form.visible = true
                                 trade_form.enabled = true
                                 trade_menu_3.visible = false
-                                backend.setTradePartner(2);
                             }
                         }
                     }
@@ -233,7 +284,6 @@ Window {
                                 trade_form.visible = true
                                 trade_form.enabled = true
                                 trade_menu_4.visible = false
-                                backend.setTradePartner(4);
                             }
                         }
                     }

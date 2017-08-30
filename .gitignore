@@ -1,7 +1,3 @@
 *.pro.user*
 build-*/
 *.ref/
-Client/Client/Resource_Form.qml
-Client/Client/qml.qrc
-Client/Client/Map.qml
-Client/Client/Login_form.qml

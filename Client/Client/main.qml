@@ -19,12 +19,13 @@ Window {
     BackEnd {
         id: backend
     }
+    width: 1440;
+    height: 900;
     visible: true
     Map{
         id: main_menu
         width: parent.width
         height: parent.height
-
         color: "Black"
         Button{
             id: start_game
@@ -36,7 +37,7 @@ Window {
         }
         Login_form{
             visible: false
-            color: red
+            color: "red"
             id: login
             anchors.centerIn: parent
             Item{
@@ -81,7 +82,6 @@ Window {
         }
         Client_Trade_Form{
             id: client_trade_form
-
             anchors.centerIn: main_map
         }
         Resource_Form{

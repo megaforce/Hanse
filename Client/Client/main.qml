@@ -36,7 +36,7 @@ Window {
         }
         Login_form{
             visible: false
-            color: red
+            color: "red"
             id: login
             anchors.centerIn: parent
             Item{
@@ -81,7 +81,7 @@ Window {
         }
         Client_Trade_Form{
             id: client_trade_form
-
+            visible: false
             anchors.centerIn: main_map
         }
         Resource_Form{

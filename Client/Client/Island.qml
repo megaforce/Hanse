@@ -1,4 +1,4 @@
-import QtQuick 2.6
+import QtQuick 2.7
 
 Image{
     anchors.margins: 10

@@ -29,6 +29,7 @@ public:
 	Q_INVOKABLE void setTradePartner(const qint32 &num);
 	Q_INVOKABLE void sendTrade();
 	Q_INVOKABLE void clearTrade();
+	Q_INVOKABLE void startGame();
 
 	QString foodRes();
 	QString woodRes();

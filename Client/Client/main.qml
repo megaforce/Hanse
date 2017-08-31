@@ -49,7 +49,7 @@ Window {
                     selectByMouse: true
                     anchors.margins: 10
                     color: "Green"
-                    text: ""
+                    text: "";
                     placeholderText: qsTr("Enter username")
                     opacity: 1000
                 }

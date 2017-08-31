@@ -42,14 +42,15 @@ Window {
             anchors.centerIn: parent
             Item{
                 anchors.centerIn: parent
-                TextInput{
+                TextField{
                     id: username
                     anchors.centerIn: parent
                     anchors.top: parent.top
                     selectByMouse: true;
                     anchors.margins: 10
                     color: "Green"
-                    text: "Enter username"
+                    text: "";
+                    placeholderText: qsTr("Enter username")
                     opacity: 1000
                 }
                 Button{

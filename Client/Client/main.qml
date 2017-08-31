@@ -81,7 +81,7 @@ Window {
             anchors.bottom: main_map.bottom
             anchors.left: island_4.right
             anchors.margins: 10
-                    }
+        }
         Trade_Form{
             id: trade_form
             visible: false

@@ -16,16 +16,19 @@ import trade.backend 1.0
 
 
 Rectangle{
-    height: 320
-    width: 850
-    visible: false
-    enabled: false
+    height: parent.height /3.5
+    width: parent.width /2
+
     color: "Black"
     Item {
+        id: tf
+        width: parent.width
+        height: parent.height
         TextField
         {
             id: stone
-            //width: 100
+            height: tf.height / 8.2
+            width: tf.width / 4.5
             readOnly: true
             text: "Stone"
             anchors.topMargin: 10
@@ -37,6 +40,8 @@ Rectangle{
         TextField
         {
             id: iron
+            height: tf.height / 8.2
+            width: tf.width / 4.5
             text: "Iron"
             readOnly: true
             anchors.top: stone.bottom
@@ -48,6 +53,8 @@ Rectangle{
         TextField
         {
             id: wood
+            height: tf.height / 8.2
+            width: tf.width / 4.5
             text: "Wood"
             readOnly: true
             anchors.top: iron.bottom
@@ -59,6 +66,8 @@ Rectangle{
         TextField
         {
             id: food
+            height: tf.height / 8.2
+            width: tf.width / 4.5
             text: "Food"
             readOnly: true
             anchors.top: wood.bottom
@@ -70,6 +79,8 @@ Rectangle{
         TextField
         {
             id: stone_sent
+            height: tf.height / 8.2
+            width: tf.width / 4.5
             anchors.margins: 10
             anchors.leftMargin: 0
             anchors.left: offer.left
@@ -86,6 +97,8 @@ Rectangle{
         TextField
         {
             id: iron_sent
+            height: tf.height / 8.2
+            width: tf.width / 4.5
             anchors.margins: 10
             anchors.leftMargin: 0
             anchors.left: stone_sent.left
@@ -102,6 +115,8 @@ Rectangle{
         TextField
         {
             id: wood_sent
+            height: tf.height / 8.2
+            width: tf.width / 4.5
             anchors.margins: 10
             anchors.leftMargin: 0
             anchors.left: iron_sent.left
@@ -118,6 +133,8 @@ Rectangle{
         TextField
         {
             id: food_sent
+            height: tf.height / 8.2
+            width: tf.width / 4.5
             anchors.margins: 10
             anchors.leftMargin: 0
             anchors.left: wood_sent.left
@@ -134,6 +151,8 @@ Rectangle{
         TextField
         {
             id: stone_requested
+            height: tf.height / 8.2
+            width: tf.width / 4.5
             anchors.margins: 10
             anchors.leftMargin: 0
             anchors.left: request.left
@@ -150,6 +169,8 @@ Rectangle{
         TextField
         {
             id: iron_requested
+            height: tf.height / 8.2
+            width: tf.width / 4.5
             anchors.margins: 10
             anchors.leftMargin: 0
             anchors.left: stone_requested.left
@@ -166,6 +187,8 @@ Rectangle{
         TextField
         {
             id: wood_requested
+            height: tf.height / 8.2
+            width: tf.width / 4.5
             anchors.margins: 10
             anchors.leftMargin: 0
             anchors.left: iron_requested.left
@@ -182,6 +205,8 @@ Rectangle{
         TextField
         {
             id: food_requested
+            height: tf.height / 8.2
+            width: tf.width / 4.5
             anchors.margins: 10
             anchors.leftMargin: 0
             anchors.left: wood_requested.left
@@ -198,6 +223,8 @@ Rectangle{
         TextField
         {
             id: stone_resource
+            height: tf.height / 8.2
+            width: tf.width / 4.5
             anchors.margins: 10
             anchors.leftMargin: 0
             anchors.left: resource.left
@@ -214,6 +241,8 @@ Rectangle{
         TextField
         {
             id: iron_resource
+            height: tf.height / 8.2
+            width: tf.width / 4.5
             anchors.margins: 10
             anchors.leftMargin: 0
             anchors.left: stone_resource.left
@@ -230,6 +259,8 @@ Rectangle{
         TextField
         {
             id: wood_resource
+            height: tf.height / 8.2
+            width: tf.width / 4.5
             anchors.margins: 10
             anchors.leftMargin: 0
             anchors.left: iron_resource.left
@@ -246,6 +277,8 @@ Rectangle{
         TextField
         {
             id: food_resource
+            height: tf.height / 8.2
+            width: tf.width / 4.5
             anchors.margins: 10
             anchors.leftMargin: 0
             anchors.left: wood_resource.left
@@ -262,6 +295,8 @@ Rectangle{
         TextField
         {
             id: blank
+            height: tf.height / 8.2
+            width: tf.width / 4.5
             visible: false
             anchors.leftMargin: 10
             anchors.topMargin: 10
@@ -274,6 +309,8 @@ Rectangle{
         TextField
         {
             id: offer
+            height: tf.height / 8.2
+            width: tf.width / 4.5
             text: "Your offer"
             readOnly: true
             anchors.margins: 10
@@ -285,6 +322,8 @@ Rectangle{
         TextField
         {
             id: request
+            height: tf.height / 8.2
+            width: tf.width / 4.5
             text: "Your request"
             readOnly: true
             anchors.margins: 10
@@ -296,6 +335,8 @@ Rectangle{
         TextField
         {
             id: resource
+            height: tf.height / 8.2
+            width: tf.width / 4.5
             text: "Acctual resources"
             readOnly: true
             anchors.margins: 10
@@ -306,8 +347,10 @@ Rectangle{
         }
         Button{
             id: clear
+            height: tf.height / 8.2
+            width: tf.width / 4.5
             text: "CLEAR"
-            anchors.left: food_requested.left
+            anchors.right: food_requested.right
             anchors.top: food_requested.bottom
             anchors.margins: 10
             MouseArea {
@@ -331,8 +374,10 @@ Rectangle{
         }
         Button{
             id: send
+            height: tf.height / 8.2
+            width: tf.width / 4.5
             text: "TRADE"
-            anchors.left: food_resource.left
+            anchors.right: food_resource.right
             anchors.top: food_resource.bottom
             anchors.margins: 10
 

@@ -77,8 +77,15 @@ Window {
         height: parent.height
         anchors.centerIn: parent
         color: "blue"
+        Resource_Form{
+            id: resources
+            anchors.bottom: main_map.bottom
+            anchors.left: island_4.right
+            anchors.margins: 10
+        }
         Trade_Form{
             id: trade_form
+            visible: false
             anchors.centerIn: main_map
         }
         Client_Trade_Form{
@@ -86,15 +93,11 @@ Window {
             visible: false
             anchors.centerIn: main_map
         }
-        Resource_Form{
-            id: resources
-            anchors.left: island_4.right
-            anchors.bottom: island_4.bottom
-            anchors.bottomMargin: 200
-            anchors.leftMargin: 300
-            opacity: 100000000000000
-        }
+
         Island{
+            source: "/File/image/island1.png"
+            width: main_map.width / 7.11
+            height: main_map.height / 4
             Boat{
                 id: boat_1
                 anchors.right: island_1.right
@@ -144,6 +147,9 @@ Window {
             }
         }
         Island{
+            source: "/File/image/island2.png"
+            width: main_map.width / 7.11
+            height: main_map.height / 4
             Boat{
                 id: boat_2
                 anchors.left: parent.left
@@ -193,6 +199,9 @@ Window {
             }
         }
         Island{
+            source: "/File/image/island3.png"
+            width: main_map.width / 7.11
+            height: main_map.height / 4
             Boat{
                 id: boat_3
                 anchors.left: parent.left
@@ -242,6 +251,9 @@ Window {
             }
         }
         Island{
+            source: "/File/image/island4.png"
+            width: main_map.width / 7.11
+            height: main_map.height / 4
             Boat{
                 id: boat_4
                 anchors.right: parent.right
@@ -258,6 +270,7 @@ Window {
                 Trade_Menu{
                     id: trade_menu_4
                     anchors.left: parent.right
+
                     Button{
                         id: trade_button_4
                         text: "TRADE"

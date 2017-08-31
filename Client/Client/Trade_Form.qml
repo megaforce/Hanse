@@ -14,10 +14,13 @@ import trade.backend 1.0
 *                                                                                                                       *
 ************************************************************************************************************************/
 
-
-Rectangle{
+Image{
+    anchors.centerIn: parent
     height: parent.height /3.5
     width: parent.width /2
+Rectangle{
+    height: parent.height
+    width: parent.width
 
     color: "Black"
     Item {
@@ -388,5 +391,5 @@ Rectangle{
                 }
             }
         }
-    }
+  } }
 }

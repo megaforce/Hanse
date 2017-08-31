@@ -95,6 +95,7 @@ Window {
         }
 
         Island{
+            fillMode: Image.PreserveAspectFit
             source: "/File/image/island1.png"
             width: main_map.width / 7.11
             height: main_map.height / 4
@@ -147,6 +148,7 @@ Window {
             }
         }
         Island{
+            fillMode: Image.PreserveAspectFit
             source: "/File/image/island2.png"
             width: main_map.width / 7.11
             height: main_map.height / 4
@@ -199,6 +201,7 @@ Window {
             }
         }
         Island{
+            fillMode: Image.PreserveAspectFit
             source: "/File/image/island3.png"
             width: main_map.width / 7.11
             height: main_map.height / 4
@@ -251,6 +254,7 @@ Window {
             }
         }
         Island{
+            fillMode: Image.PreserveAspectFit
             source: "/File/image/island4.png"
             width: main_map.width / 7.11
             height: main_map.height / 4

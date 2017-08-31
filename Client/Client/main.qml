@@ -60,10 +60,10 @@ Window {
                     MouseArea{
                         anchors.fill: parent;
                         onClicked: {
+                            backend.startGame(username.text);
                             main_menu.visible = false;
                             main_menu.enabled = false;
                             main_map.visible = true;
-                            backend.startGame();
                         }
                     }
                 }

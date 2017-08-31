@@ -1,3 +1,9 @@
 *.pro.user*
 build-*/
+*.autosave
 *.ref/
+*.ref*
+*.bck/
+*.bck*
+*.old/
+*.old*

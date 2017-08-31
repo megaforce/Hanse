@@ -86,10 +86,10 @@ Rectangle{
             anchors.left: offer.left
             anchors.top: offer.bottom
             validator: IntValidator{
-                bottom: 0;
-                top: 999999;
+                bottom: 0
+                top: 999999
             }
-            selectByMouse: true;
+            selectByMouse: true
             onTextChanged: backend.setTradeProperty("stoneOffered", text)
             color: "Green"
             opacity: 1000
@@ -104,10 +104,10 @@ Rectangle{
             anchors.left: stone_sent.left
             anchors.top: stone_sent.bottom
             validator: IntValidator{
-                bottom: 0;
-                top: 999999;
+                bottom: 0
+                top: 999999
             }
-            selectByMouse: true;
+            selectByMouse: true
             onTextChanged: backend.setTradeProperty("ironOffered", text)
             color: "Green"
             opacity: 1000
@@ -122,10 +122,10 @@ Rectangle{
             anchors.left: iron_sent.left
             anchors.top: iron_sent.bottom
             validator: IntValidator{
-                bottom: 0;
-                top: 999999;
+                bottom: 0
+                top: 999999
             }
-            selectByMouse: true;
+            selectByMouse: true
             onTextChanged: backend.setTradeProperty("woodOffered", text)
             color: "Green"
             opacity: 1000
@@ -140,10 +140,10 @@ Rectangle{
             anchors.left: wood_sent.left
             anchors.top: wood_sent.bottom
             validator: IntValidator{
-                bottom: 0;
-                top: 999999;
+                bottom: 0
+                top: 999999
             }
-            selectByMouse: true;
+            selectByMouse: true
             onTextChanged: backend.setTradeProperty("foodOffered", text)
             color: "Green"
             opacity: 1000
@@ -158,10 +158,10 @@ Rectangle{
             anchors.left: request.left
             anchors.top: request.bottom
             validator: IntValidator{
-                bottom: 0;
-                top: 999999;
+                bottom: 0
+                top: 999999
             }
-            selectByMouse: true;
+            selectByMouse: true
             onTextChanged: backend.setTradeProperty("stoneRequested", text)
             color: "Green"
             opacity: 1000
@@ -176,10 +176,10 @@ Rectangle{
             anchors.left: stone_requested.left
             anchors.top: stone_requested.bottom
             validator: IntValidator{
-                bottom: 0;
-                top: 999999;
+                bottom: 0
+                top: 999999
             }
-            selectByMouse: true;
+            selectByMouse: true
             onTextChanged: backend.setTradeProperty("ironRequested", text)
             color: "Green"
             opacity: 1000
@@ -194,10 +194,10 @@ Rectangle{
             anchors.left: iron_requested.left
             anchors.top: iron_requested.bottom
             validator: IntValidator{
-                bottom: 0;
-                top: 999999;
+                bottom: 0
+                top: 999999
             }
-            selectByMouse: true;
+            selectByMouse: true
             onTextChanged: backend.setTradeProperty("woodRequested", text)
             color: "Green"
             opacity: 1000
@@ -212,10 +212,10 @@ Rectangle{
             anchors.left: wood_requested.left
             anchors.top: wood_requested.bottom
             validator: IntValidator{
-                bottom: 0;
-                top: 999999;
+                bottom: 0
+                top: 999999
             }
-            selectByMouse: true;
+            selectByMouse: true
             onTextChanged: backend.setTradeProperty("foodRequested", text)
             color: "Green"
             opacity: 1000
@@ -230,10 +230,10 @@ Rectangle{
             anchors.left: resource.left
             anchors.top: resource.bottom
             validator: IntValidator{
-                bottom: 0;
-                top: 999999;
+                bottom: 0
+                top: 999999
             }
-            selectByMouse: true;
+            selectByMouse: true
             onTextChanged: backend.setTradeProperty("stoneGiven", text)
             color: "Green"
             opacity: 1000
@@ -248,10 +248,10 @@ Rectangle{
             anchors.left: stone_resource.left
             anchors.top: stone_resource.bottom
             validator: IntValidator{
-                bottom: 0;
-                top: 999999;
+                bottom: 0
+                top: 999999
             }
-            selectByMouse: true;
+            selectByMouse: true
             onTextChanged: backend.setTradeProperty("ironGiven", text)
             color: "Green"
             opacity: 1000
@@ -266,10 +266,10 @@ Rectangle{
             anchors.left: iron_resource.left
             anchors.top: iron_resource.bottom
             validator: IntValidator{
-                bottom: 0;
-                top: 999999;
+                bottom: 0
+                top: 999999
             }
-            selectByMouse: true;
+            selectByMouse: true
             onTextChanged: backend.setTradeProperty("woodGiven", text)
             color: "Green"
             opacity: 1000
@@ -284,10 +284,10 @@ Rectangle{
             anchors.left: wood_resource.left
             anchors.top: wood_resource.bottom
             validator: IntValidator{
-                bottom: 0;
-                top: 999999;
+                bottom: 0
+                top: 999999
             }
-            selectByMouse: true;
+            selectByMouse: true
             onTextChanged: backend.setTradeProperty("foodGiven", text)
             color: "Green"
             opacity: 1000
@@ -356,19 +356,19 @@ Rectangle{
             MouseArea {
                 anchors.fill: clear
                 onClicked: {
-                    backend.clearTrade();
-                    stone_sent.clear();
-                    food_sent.clear();
-                    iron_sent.clear();
-                    wood_sent.clear();
-                    stone_requested.clear();
-                    food_requested.clear();
-                    iron_requested.clear();
-                    wood_requested.clear();
-                    stone_resource.clear();
-                    iron_resource.clear();
-                    wood_resource.clear();
-                    food_resource.clear();
+                    backend.clearTrade()
+                    stone_sent.clear()
+                    food_sent.clear()
+                    iron_sent.clear()
+                    wood_sent.clear()
+                    stone_requested.clear()
+                    food_requested.clear()
+                    iron_requested.clear()
+                    wood_requested.clear()
+                    stone_resource.clear()
+                    iron_resource.clear()
+                    wood_resource.clear()
+                    food_resource.clear()
                 }
             }
         }

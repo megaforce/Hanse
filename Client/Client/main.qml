@@ -19,8 +19,8 @@ Window {
     BackEnd {
         id: backend
     }
-    width: 1440;
-    height: 900;
+    width: 1440
+    height: 900
     visible: true
     Map{
         id: main_menu
@@ -46,7 +46,7 @@ Window {
                     id: username
                     anchors.centerIn: parent
                     anchors.top: parent.top
-                    selectByMouse: true;
+                    selectByMouse: true
                     anchors.margins: 10
                     color: "Green"
                     text: ""
@@ -79,13 +79,14 @@ Window {
         color: "blue"
         Resource_Form{
             id: resources
+            fillMode: Image.PreserveAspectFit
             anchors.bottom: main_map.bottom
             anchors.left: island_4.right
             anchors.margins: 10
         }
         Trade_Form{
             id: trade_form
-            visible: false
+            //fillMode: Image.PreserveAspectFit
             anchors.centerIn: main_map
         }
         Client_Trade_Form{
@@ -127,7 +128,7 @@ Window {
                             trade_form.visible = true
                             trade_form.enabled = true
                             trade_menu_1.visible = false
-                            backend.setTradePartner(0);
+                            backend.setTradePartner(0)
                         }
                     }
                 }
@@ -179,7 +180,7 @@ Window {
                                 trade_form.visible = true
                                 trade_form.enabled = true
                                 trade_menu_2.visible = false
-                                backend.setTradePartner(1);
+                                backend.setTradePartner(1)
                             }
                         }
                     }
@@ -232,7 +233,7 @@ Window {
                                 trade_form.visible = true
                                 trade_form.enabled = true
                                 trade_menu_3.visible = false
-                                backend.setTradePartner(2);
+                                backend.setTradePartner(2)
                             }
                         }
                     }
@@ -286,7 +287,7 @@ Window {
                                 trade_form.visible = true
                                 trade_form.enabled = true
                                 trade_menu_4.visible = false
-                                backend.setTradePartner(3);
+                                backend.setTradePartner(3)
                             }
                         }
                     }

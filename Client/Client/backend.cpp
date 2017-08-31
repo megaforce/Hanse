@@ -20,15 +20,6 @@ BackEnd::BackEnd(QObject *parent) :
 
 	connect(this, SIGNAL(startConnection(QString, QString)), serverConnection, SLOT(startConnection(QString,QString)));
 	serverConnection->moveToThread(serverThread);
-
-	username = "";
-	inventory.food  = 1000;
-	inventory.wood  = 1000;
-	inventory.stone = 1000;
-	inventory.iron  = 1000;
-
-	connect(this, SIGNAL(sendData(QByteArray)), serverConnection, SLOT(sendData(QByteArray)));
-	emit startConnection(QString("93.103.236.159"), username);
 }
 
 auto BackEnd::setTradeProperty(const QString &tradeProperty, const QString &tradeValue) -> void
@@ -53,6 +44,12 @@ auto BackEnd::sendTrade() -> void
 auto BackEnd::clearTrade() -> void
 {
 	qDebug() << "clearTrade";
+}
+
+auto BackEnd::startGame() -> void
+{
+	connect(this, SIGNAL(sendData(QByteArray)), serverConnection, SLOT(sendData(QByteArray)));
+	emit startConnection(QString("93.103.236.159"), username);
 }
 
 auto BackEnd::setState(const QByteArray &data) -> void

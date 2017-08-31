@@ -64,6 +64,7 @@ Window {
                             main_menu.visible = false;
                             main_menu.enabled = false;
                             main_map.visible = true;
+                            backend.startGame();
                         }
                     }
                 }

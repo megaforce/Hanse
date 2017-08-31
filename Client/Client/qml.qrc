@@ -15,5 +15,9 @@
         <file>image/island.png</file>
         <file>image/lineedit.png</file>
         <file>image/lineedit.sci</file>
+        <file>image/island1.png</file>
+        <file>image/island2.png</file>
+        <file>image/island3.png</file>
+        <file>image/island4.png</file>
     </qresource>
 </RCC>

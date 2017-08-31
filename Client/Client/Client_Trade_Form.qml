@@ -17,13 +17,19 @@ import trade.backend 1.0
 //                                   -Muf
 
 Rectangle{
-    height: 320
-    width: 850
+    height: parent.height /3.5
+    width: parent.width /2
 
     enabled: true
     color: "Black"
     Item {
+        height: parent.height
+        width: parent.width
+        id: ctf
+
         TextField{
+            height: ctf.height /8.2
+            width: ctf.width /4.3
             id: blank
             visible: false
             anchors.leftMargin: 10
@@ -38,6 +44,8 @@ Rectangle{
         TextField
         {
             id: stone
+            height: ctf.height /8.2
+            width: ctf.width /4.3
             enabled: true
             text: "Stone"
             anchors.topMargin: 10
@@ -50,6 +58,8 @@ Rectangle{
         TextField
         {
             id: iron
+            height: ctf.height /8.2
+            width: ctf.width /4.3
             text: "Iron"
             enabled: true
             anchors.top: stone.bottom
@@ -62,6 +72,8 @@ Rectangle{
         TextField
         {
             id: wood
+            height: ctf.height /8.2
+            width: ctf.width /4.3
             text: "Wood"
             enabled: true
             anchors.top: iron.bottom
@@ -74,6 +86,8 @@ Rectangle{
         TextField
         {
             id: food
+            height: ctf.height /8.2
+            width: ctf.width /4.3
             text: "Food"
             enabled: true
             anchors.top: wood.bottom
@@ -85,6 +99,8 @@ Rectangle{
         }
         TextField{
             id: player_offer
+            height: ctf.height /8.2
+            width: ctf.width /4.3
             text: "Player offer"
             enabled: true
             anchors.left: blank.right
@@ -97,6 +113,8 @@ Rectangle{
         }
         TextField{
             id: stone_client_offer
+            height: ctf.height /8.2
+            width: ctf.width /4.3
             text:""
             enabled: true
             anchors.left: stone.right
@@ -109,6 +127,8 @@ Rectangle{
         }
         TextField{
             id: iron_client_offer
+            height: ctf.height /8.2
+            width: ctf.width /4.3
             text:""
             enabled: true
             anchors.left: iron.right
@@ -120,6 +140,8 @@ Rectangle{
         }
         TextField{
             id: wood_client_offer
+            height: ctf.height /8.2
+            width: ctf.width /4.3
             text:""
             enabled: true
             anchors.left: wood.right
@@ -131,6 +153,8 @@ Rectangle{
         }
         TextField{
             id: food_client_offer
+            height: ctf.height /8.2
+            width: ctf.width /4.3
             text:""
             enabled: true
             anchors.left: food.right
@@ -142,6 +166,8 @@ Rectangle{
         }
         TextField{
             id: player_demand
+            height: ctf.height /8.2
+            width: ctf.width /4.3
             text: "Player demand"
             enabled: true
             anchors.left: player_offer.right
@@ -154,6 +180,8 @@ Rectangle{
         }
         TextField{
             id: stone_client_demand
+            height: ctf.height /8.2
+            width: ctf.width /4.3
             text:""
             enabled: true
             anchors.left: stone_client_offer.right
@@ -166,6 +194,8 @@ Rectangle{
         }
         TextField{
             id: iron_client_demand
+            height: ctf.height /8.2
+            width: ctf.width /4.3
             text:""
             enabled: true
             anchors.left: iron_client_offer.right
@@ -177,6 +207,8 @@ Rectangle{
         }
         TextField{
             id: wood_client_demand
+            height: ctf.height /8.2
+            width: ctf.width /4.3
             text:""
             enabled: true
             anchors.left: wood_client_offer.right
@@ -188,6 +220,8 @@ Rectangle{
         }
         TextField{
             id: food_client_demand
+            height: ctf.height /8.2
+            width: ctf.width /4.3
             text:""
             enabled: true
             anchors.left: food_client_offer.right
@@ -200,6 +234,8 @@ Rectangle{
         TextField
         {
             id: acctual
+            height: ctf.height /8.2
+            width: ctf.width /4.3
             enabled: true
             text: "Acctual resources"
             anchors.margins: 10
@@ -213,6 +249,8 @@ Rectangle{
         TextField
         {
             id: send_stone
+            height: ctf.height /8.2
+            width: ctf.width /4.3
             anchors.margins: 10
             anchors.leftMargin: 0
             anchors.left: acctual.left
@@ -228,6 +266,8 @@ Rectangle{
         TextField
         {
             id: send_iron
+            height: ctf.height /8.2
+            width: ctf.width /4.3
             anchors.margins: 10
             anchors.leftMargin: 0
             anchors.left: send_stone.left
@@ -243,6 +283,8 @@ Rectangle{
         TextField
         {
             id: send_wood
+            height: ctf.height /8.2
+            width: ctf.width /4.3
             anchors.margins: 10
             anchors.leftMargin: 0
             anchors.left: send_iron.left
@@ -258,6 +300,8 @@ Rectangle{
         TextField
         {
             id: send_food
+            height: ctf.height /8.2
+            width: ctf.width /4.3
             anchors.margins: 10
             anchors.leftMargin: 0
             anchors.left: send_wood.left
@@ -272,6 +316,8 @@ Rectangle{
         }
         Button{
             id: client_trade
+            height: ctf.height /8.2
+            width: ctf.width /4.3
             text: "TRADE"
             anchors.left: send_food.left
             anchors.top: send_food.bottom
@@ -283,6 +329,8 @@ Rectangle{
         }
         Button{
             id: client_decline
+            height: ctf.height /8.2
+            width: ctf.width /4.3
             text: "DECLINE"
             anchors.left: food_client_demand.left
             anchors.top: food_client_demand.bottom

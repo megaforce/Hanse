@@ -30,6 +30,7 @@ auto BackEnd::setTradeProperty(const QString &tradeProperty, const QString &trad
 
 auto BackEnd::setTradePartner(const qint32 &num) -> void
 {
+	qDebug() << "trade[\"toPlayer\"] = " + players.at(num);
 	tradeData["toPlayer"] = players.at(num);
 }
 
@@ -46,10 +47,12 @@ auto BackEnd::clearTrade() -> void
 	qDebug() << "clearTrade";
 }
 
-auto BackEnd::startGame() -> void
+auto BackEnd::startGame(const QString &uname) -> void
 {
+	username = uname;
 	connect(this, SIGNAL(sendData(QByteArray)), serverConnection, SLOT(sendData(QByteArray)));
 	emit startConnection(QString("93.103.236.159"), username);
+
 }
 
 auto BackEnd::setState(const QByteArray &data) -> void

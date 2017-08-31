@@ -8,11 +8,14 @@
 #include <QJsonArray>
 #include <QStringList>
 #include <QThread>
+#include <QGuiApplication>
 
 #include "hanseserverthread.h"
 #include "resources.h"
 #include "globalvariables.h"
 #include "trade.h"
+
+extern QGuiApplication* papp;
 
 class BackEnd : public QObject
 {
@@ -30,6 +33,11 @@ public:
 	Q_INVOKABLE void startGame(const QString &uname);
 	Q_INVOKABLE void sendTrade();
 	Q_INVOKABLE void clearTrade();
+
+	void startup(){
+		QObject::connect(papp, SIGNAL(aboutToQuit()), this, SLOT(cleanup()));
+	}
+
 
 	QString foodRes();
 	QString woodRes();
@@ -53,9 +61,13 @@ private slots:
 	void setState(const QByteArray &data);
 	void recieveTradeOffer(const QByteArray &data);
 	void endOfTurn(const QByteArray &data);
+	void cleanup(){
+		serverThread->exit();
+	}
 
 private:
 	QJsonObject tradeData;
+	QThread *serverThread;
 
 	HanseServerThread *serverConnection;
 	Resources inventory;

@@ -256,10 +256,10 @@ Rectangle{
             anchors.left: acctual.left
             anchors.top:  acctual.bottom
             validator: IntValidator{
-                bottom: 0;
-                top: 999999;
+                bottom: 0
+                top: 999999
             }
-            selectByMouse: true;
+            selectByMouse: true
             color: "Green"
             opacity: 1000
         }
@@ -273,10 +273,10 @@ Rectangle{
             anchors.left: send_stone.left
             anchors.top: send_stone.bottom
             validator: IntValidator{
-                bottom: 0;
-                top: 999999;
+                bottom: 0
+                top: 999999
             }
-            selectByMouse: true;
+            selectByMouse: true
             color: "Green"
             opacity: 1000
         }
@@ -290,10 +290,10 @@ Rectangle{
             anchors.left: send_iron.left
             anchors.top: send_iron.bottom
             validator: IntValidator{
-                bottom: 0;
-                top: 999999;
+                bottom: 0
+                top: 999999
             }
-            selectByMouse: true;
+            selectByMouse: true
             color: "Green"
             opacity: 1000
         }
@@ -307,10 +307,10 @@ Rectangle{
             anchors.left: send_wood.left
             anchors.top: send_wood.bottom
             validator: IntValidator{
-                bottom: 0;
-                top: 999999;
+                bottom: 0
+                top: 999999
             }
-            selectByMouse: true;
+            selectByMouse: true
             color: "Green"
             opacity: 1000
         }

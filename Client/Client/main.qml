@@ -80,6 +80,7 @@ Window {
         color: "blue";
         Resource_Form{
             id: resources;
+            fillMode: Image.PreserveAspectFit
             anchors.bottom: main_map.bottom;
             anchors.left: island_4.right;
             anchors.margins: 10;

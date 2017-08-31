@@ -9,6 +9,7 @@
         <file>Resource_Form.qml</file>
         <file>Client_Trade_Form.qml</file>
         <file>Login_form.qml</file>
+        <file>Pending_Trade_Form.qml</file>
     </qresource>
     <qresource prefix="/File">
         <file>image/ship.png</file>

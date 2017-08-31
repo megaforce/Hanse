@@ -15,10 +15,12 @@ import trade.backend 1.0
 ************************************************************************************************************************/
 // a code? A CODE? what is this a india?
 //                                   -Muf
-
-Rectangle{
+Image{
     height: parent.height /3.5
     width: parent.width /2
+Rectangle{
+    height: parent.height
+    width: parent.width
 
     enabled: true
     color: "Black"
@@ -341,4 +343,5 @@ Rectangle{
             }
         }
     }
+}
 }

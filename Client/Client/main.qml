@@ -37,7 +37,6 @@ Window {
         }
         Login_form{
             visible: false;
-            color: "red";
             id: login;
             anchors.centerIn: parent;
             Item{
@@ -75,8 +74,7 @@ Window {
         visible: false;
         id: main_map;
         width: parent.width;
-        height: parent.height;
-        anchors.centerIn: parent;
+        height: parent.height;        
         color: "blue";
         Resource_Form{
             id: resources;
@@ -87,6 +85,7 @@ Window {
         }
         Trade_Form{
             id: trade_form;
+            fillMode: Image.PreserveAspectFit
             visible: false;
             anchors.centerIn: main_map;
         }

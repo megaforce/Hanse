@@ -74,7 +74,7 @@ Window {
         visible: false;
         id: main_map;
         width: parent.width;
-        height: parent.height;        
+        height: parent.height;
         color: "blue";
         Resource_Form{
             id: resources;

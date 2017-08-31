@@ -10,7 +10,7 @@ import QtQuick.Dialogs 1.2
 *                                                                                                                       *
 ************************************************************************************************************************/
 
-Rectangle{
+Image{
     visible: true
     enabled: false
     height: parent.height / 10

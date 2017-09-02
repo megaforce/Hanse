@@ -9,6 +9,7 @@ SOURCES += main.cpp \
     resources.cpp \
     trade.cpp
 
+
 RESOURCES += qml.qrc
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
@@ -39,3 +40,5 @@ HEADERS += \
     hanseserverthread.h \
     resources.h \
     trade.h
+
+DISTFILES +=

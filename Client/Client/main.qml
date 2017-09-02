@@ -14,11 +14,14 @@ import trade.backend 1.0
 *                                                                                                                       *
 ************************************************************************************************************************/
 
+
+
 Window {
     id: root;
     BackEnd {
         id: backend;
     }
+
     width: 1440;
     height: 900;
     visible: true;
@@ -27,6 +30,7 @@ Window {
         width: parent.width;
         height: parent.height;
         color: "Black";
+
         Button{
             id: start_game;
             anchors.centerIn: parent;
@@ -94,6 +98,11 @@ Window {
             visible: false;
             anchors.centerIn: main_map;
         }
+        Pending_Trade_Form{
+        id: pending_trade_form
+        visible: true
+        anchors.centerIn: main_map
+        }
 
         Island{
             fillMode: Image.PreserveAspectFit;
@@ -132,6 +141,7 @@ Window {
                         }
                     }
                 }
+
                 Button{
                     anchors.top: trade_button_1.bottom;
                     anchors.left: trade_button_1.left;

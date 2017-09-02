@@ -99,9 +99,9 @@ Window {
             anchors.centerIn: main_map;
         }
         Pending_Trade_Form{
-        id: pending_trade_form
-        visible: true
-        anchors.centerIn: main_map
+            id: pending_trade_form
+            visible: false
+            anchors.centerIn: main_map
         }
 
         Island{
@@ -143,8 +143,8 @@ Window {
                 }
 
                 Button{
-                    anchors.top: trade_button_1.bottom;
-                    anchors.left: trade_button_1.left;
+                    anchors.top: pending_trade_button_1.bottom;
+                    anchors.left: pending_trade_button_1.left;
                     id: cancel_button_1;
                     text: "CANCEL";
                     MouseArea {
@@ -153,6 +153,19 @@ Window {
                             trade_form.visible = false;
                             trade_form.enabled = false;
                             trade_menu_1.visible = false;
+                            pending_trade_form.visible = false
+                        }
+                    }
+                }
+                Button{
+                    anchors.top: trade_button_1.bottom;
+                    anchors.left: trade_button_1.left;
+                    id: pending_trade_button_1;
+                    text: "OPEN TRADES";
+                    MouseArea {
+                        anchors.fill: pending_trade_button_1;
+                        onClicked: {
+                            pending_trade_form.visible = true
                         }
                     }
                 }
@@ -195,8 +208,8 @@ Window {
                         }
                     }
                     Button{
-                        anchors.top: trade_button_2.bottom;
-                        anchors.left: trade_button_2.left;
+                        anchors.top: pending_trade_button_2.bottom;
+                        anchors.left: pending_trade_button_2.left;
                         id: cancel_button_2;
                         text: "CANCEL";
                         MouseArea {
@@ -205,6 +218,21 @@ Window {
                                 trade_form.visible = false;
                                 trade_form.enabled = false;
                                 trade_menu_2.visible = false;
+                                pending_trade_form.visible = false
+                            }
+                        }
+
+
+                    }
+                    Button{
+                        anchors.top: trade_button_2.bottom;
+                        anchors.left: trade_button_2.left;
+                        id: pending_trade_button_2;
+                        text: "OPEN TRADES";
+                        MouseArea {
+                            anchors.fill: pending_trade_button_2;
+                            onClicked: {
+                                pending_trade_form.visible = true
                             }
                         }
                     }
@@ -248,8 +276,8 @@ Window {
                         }
                     }
                     Button{
-                        anchors.top: trade_button_3.bottom;
-                        anchors.left: trade_button_3.left;
+                        anchors.top: pending_trade_button_3.bottom;
+                        anchors.left: pending_trade_button_3.left;
                         id: cancel_button_3;
                         text: "CANCEL";
                         MouseArea {
@@ -258,6 +286,19 @@ Window {
                                 trade_form.visible = false;
                                 trade_form.enabled = false;
                                 trade_menu_3.visible = false;
+                                pending_trade_form.visible = false
+                            }
+                        }
+                    }
+                    Button{
+                        anchors.top: trade_button_3.bottom;
+                        anchors.left: trade_button_3.left;
+                        id: pending_trade_button_3;
+                        text: "OPEN TRADES";
+                        MouseArea {
+                            anchors.fill: pending_trade_button_3;
+                            onClicked: {
+                                pending_trade_form.visible = true
                             }
                         }
                     }
@@ -302,8 +343,8 @@ Window {
                         }
                     }
                     Button{
-                        anchors.top: trade_button_4.bottom;
-                        anchors.left: trade_button_4.left;
+                        anchors.top: pending_trade_button_4.bottom;
+                        anchors.left: pending_trade_button_4.left;
                         id: cancel_button_4;
                         text: "CANCEL";
                         MouseArea {
@@ -312,6 +353,20 @@ Window {
                                 trade_form.visible = false;
                                 trade_form.enabled = false;
                                 trade_menu_4.visible = false;
+                                pending_trade_form.visible = false
+                            }
+                        }
+
+                    }
+                    Button{
+                        anchors.top: trade_button_4.bottom;
+                        anchors.left: trade_button_4.left;
+                        id: pending_trade_button_4;
+                        text: "OPEN TRADES";
+                        MouseArea {
+                            anchors.fill: pending_trade_button_4;
+                            onClicked: {
+                                pending_trade_form.visible = true
                             }
                         }
                     }

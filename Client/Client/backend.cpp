@@ -10,7 +10,7 @@ BackEnd::BackEnd(QObject *parent) :
 	tradeData["type"] = static_cast<int>(codes_t::TRADE_REQUEST);
 
 	serverConnection = new HanseServerThread();
-	QThread *serverThread = new QThread(this);
+	serverThread = new QThread(this);
 	serverThread->start();
 
 	//connect receiving slots
@@ -20,7 +20,9 @@ BackEnd::BackEnd(QObject *parent) :
 
 	connect(this, SIGNAL(startConnection(QString, QString)), serverConnection, SLOT(startConnection(QString,QString)));
 	serverConnection->moveToThread(serverThread);
+	startup();
 }
+
 
 auto BackEnd::setTradeProperty(const QString &tradeProperty, const QString &tradeValue) -> void
 {

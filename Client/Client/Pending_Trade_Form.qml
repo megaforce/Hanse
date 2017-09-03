@@ -4,6 +4,8 @@ import QtQuick.Dialogs 1.2
 import QtQuick.Controls.Styles 1.4
 import trade.backend 1.0
 
+//TODO needs a fetch called when the menu opens;
+
 Image{
     height: parent.height /3.5
     width: parent.width /2
@@ -16,11 +18,21 @@ Image{
         Item {
             height: parent.height
             width: parent.width
-            id: ctf
+            id: ptf
+            function fetch() {
+                stone_client_offer.text = backend.tradeInfo("stone_client_offer");
+                iron_client_offer.text = backend.tradeInfo("iron_client_offer");
+                wood_client_offer.text = backend.tradeInfo("wood_client_offer");
+                food_client_offer.text = backend.tradeInfo("food_client_offer");
+                stone_client_demand.text = backend.tradeInfo("stone_client_demand");
+                iron_client_demand.text = backend.tradeInfo("iron_client_demand");
+                wood_client_demand.text = backend.tradeInfo("wood_client_demand");
+                food_client_demand.text = backend.tradeInfo("food_client_demand");
+            }
 
             TextField{
-                height: ctf.height /8.2
-                width: ctf.width /4.3
+                height: ptf.height /8.2
+                width: ptf.width /4.3
                 id: blank
                 visible: false
                 anchors.leftMargin: 10
@@ -35,8 +47,8 @@ Image{
             TextField
             {
                 id: stone
-                height: ctf.height /8.2
-                width: ctf.width /4.3
+                height: ptf.height /8.2
+                width: ptf.width /4.3
                 enabled: true
                 text: "Stone"
                 anchors.topMargin: 10
@@ -49,8 +61,8 @@ Image{
             TextField
             {
                 id: iron
-                height: ctf.height /8.2
-                width: ctf.width /4.3
+                height: ptf.height /8.2
+                width: ptf.width /4.3
                 text: "Iron"
                 enabled: true
                 anchors.top: stone.bottom
@@ -63,8 +75,8 @@ Image{
             TextField
             {
                 id: wood
-                height: ctf.height /8.2
-                width: ctf.width /4.3
+                height: ptf.height /8.2
+                width: ptf.width /4.3
                 text: "Wood"
                 enabled: true
                 anchors.top: iron.bottom
@@ -77,8 +89,8 @@ Image{
             TextField
             {
                 id: food
-                height: ctf.height /8.2
-                width: ctf.width /4.3
+                height: ptf.height /8.2
+                width: ptf.width /4.3
                 text: "Food"
                 enabled: true
                 anchors.top: wood.bottom
@@ -90,8 +102,8 @@ Image{
             }
             TextField{
                 id: player_offer
-                height: ctf.height /8.2
-                width: ctf.width /4.3
+                height: ptf.height /8.2
+                width: ptf.width /4.3
                 text: "Player offer"
                 enabled: true
                 anchors.left: blank.right
@@ -104,9 +116,9 @@ Image{
             }
             TextField{
                 id: stone_client_offer
-                height: ctf.height /8.2
-                width: ctf.width /4.3
-                text:""
+                height: ptf.height /8.2
+                width: ptf.width /4.3
+                text: ""
                 enabled: true
                 anchors.left: stone.right
                 anchors.top: stone.top
@@ -118,9 +130,9 @@ Image{
             }
             TextField{
                 id: iron_client_offer
-                height: ctf.height /8.2
-                width: ctf.width /4.3
-                text:""
+                height: ptf.height /8.2
+                width: ptf.width /4.3
+                text: ""
                 enabled: true
                 anchors.left: iron.right
                 anchors.top: stone_client_offer.bottom
@@ -131,9 +143,9 @@ Image{
             }
             TextField{
                 id: wood_client_offer
-                height: ctf.height /8.2
-                width: ctf.width /4.3
-                text:""
+                height: ptf.height /8.2
+                width: ptf.width /4.3
+                text: ""
                 enabled: true
                 anchors.left: wood.right
                 anchors.top: iron_client_offer.bottom
@@ -144,9 +156,9 @@ Image{
             }
             TextField{
                 id: food_client_offer
-                height: ctf.height /8.2
-                width: ctf.width /4.3
-                text:""
+                height: ptf.height /8.2
+                width: ptf.width /4.3
+                text: ""
                 enabled: true
                 anchors.left: food.right
                 anchors.top: wood_client_offer.bottom
@@ -157,8 +169,8 @@ Image{
             }
             TextField{
                 id: player_demand
-                height: ctf.height /8.2
-                width: ctf.width /4.3
+                height: ptf.height /8.2
+                width: ptf.width /4.3
                 text: "Player demand"
                 enabled: true
                 anchors.left: player_offer.right
@@ -171,9 +183,9 @@ Image{
             }
             TextField{
                 id: stone_client_demand
-                height: ctf.height /8.2
-                width: ctf.width /4.3
-                text:""
+                height: ptf.height /8.2
+                width: ptf.width /4.3
+                text: ""
                 enabled: true
                 anchors.left: stone_client_offer.right
                 anchors.top: stone_client_offer.top
@@ -185,9 +197,9 @@ Image{
             }
             TextField{
                 id: iron_client_demand
-                height: ctf.height /8.2
-                width: ctf.width /4.3
-                text:""
+                height: ptf.height /8.2
+                width: ptf.width /4.3
+                text: ""
                 enabled: true
                 anchors.left: iron_client_offer.right
                 anchors.top: stone_client_demand.bottom
@@ -198,9 +210,9 @@ Image{
             }
             TextField{
                 id: wood_client_demand
-                height: ctf.height /8.2
-                width: ctf.width /4.3
-                text:""
+                height: ptf.height /8.2
+                width: ptf.width /4.3
+                text: ""
                 enabled: true
                 anchors.left: wood_client_offer.right
                 anchors.top: iron_client_demand.bottom
@@ -211,9 +223,9 @@ Image{
             }
             TextField{
                 id: food_client_demand
-                height: ctf.height /8.2
-                width: ctf.width /4.3
-                text:""
+                height: ptf.height /8.2
+                width: ptf.width /4.3
+                text: ""
                 enabled: true
                 anchors.left: food_client_offer.right
                 anchors.top: wood_client_demand.bottom
@@ -225,8 +237,8 @@ Image{
             TextField
             {
                 id: acctual
-                height: ctf.height /8.2
-                width: ctf.width /4.3
+                height: ptf.height /8.2
+                width: ptf.width /4.3
                 enabled: true
                 text: "Acctual resources"
                 anchors.margins: 10
@@ -240,8 +252,8 @@ Image{
             TextField
             {
                 id: send_stone
-                height: ctf.height /8.2
-                width: ctf.width /4.3
+                height: ptf.height /8.2
+                width: ptf.width /4.3
                 anchors.margins: 10
                 anchors.leftMargin: 0
                 anchors.left: acctual.left
@@ -257,8 +269,8 @@ Image{
             TextField
             {
                 id: send_iron
-                height: ctf.height /8.2
-                width: ctf.width /4.3
+                height: ptf.height /8.2
+                width: ptf.width /4.3
                 anchors.margins: 10
                 anchors.leftMargin: 0
                 anchors.left: send_stone.left
@@ -274,8 +286,8 @@ Image{
             TextField
             {
                 id: send_wood
-                height: ctf.height /8.2
-                width: ctf.width /4.3
+                height: ptf.height /8.2
+                width: ptf.width /4.3
                 anchors.margins: 10
                 anchors.leftMargin: 0
                 anchors.left: send_iron.left
@@ -291,8 +303,8 @@ Image{
             TextField
             {
                 id: send_food
-                height: ctf.height /8.2
-                width: ctf.width /4.3
+                height: ptf.height /8.2
+                width: ptf.width /4.3
                 anchors.margins: 10
                 anchors.leftMargin: 0
                 anchors.left: send_wood.left
@@ -307,8 +319,8 @@ Image{
             }
             Button{
                 id: client_trade
-                height: ctf.height /8.2
-                width: ctf.width /4.3
+                height: ptf.height /8.2
+                width: ptf.width /4.3
                 text: "TRADE"
                 anchors.left: send_food.left
                 anchors.top: send_food.bottom
@@ -320,8 +332,8 @@ Image{
             }
             Button{
                 id: client_decline
-                height: ctf.height /8.2
-                width: ctf.width /4.3
+                height: ptf.height /8.2
+                width: ptf.width /4.3
                 text: "DECLINE"
                 anchors.left: food_client_demand.left
                 anchors.top: food_client_demand.bottom
@@ -334,8 +346,8 @@ Image{
             }
             Button{
                 id: previous_trade
-                height: ctf.height /8.2
-                width: ctf.width /4.3
+                height: ptf.height /8.2
+                width: ptf.width /4.3
                 text: "PREVIOUS TRADE"
                 anchors.left: food.left
                 anchors.top: food.bottom
@@ -344,20 +356,28 @@ Image{
                 anchors.rightMargin: 0
                 //anchors.topMargin: 0
                 MouseArea {
-
+                    anchors.fill: previous_trade;
+                    onClicked: {
+                        backend.tradeInfo("prev");
+                        ptf.fetch();
+                    }
                 }
             }
             Button{
                 id: next_trade
-                height: ctf.height /8.2
-                width: ctf.width /4.3
+                height: ptf.height /8.2
+                width: ptf.width /4.3
                 text: "NEXT TRADE"
                 anchors.left: food_client_offer.left
                 anchors.top: food_client_offer.bottom
                 anchors.margins: 10
                 anchors.leftMargin: 0
                 MouseArea {
-
+                    anchors.fill: next_trade;
+                    onClicked: {
+                        backend.tradeInfo("next");
+                        ptf.fetch();
+                    }
                 }
             }
         }

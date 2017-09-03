@@ -6,6 +6,8 @@ BackEnd::BackEnd(QObject *parent) :
 {
 	qDebug() << "init";
 
+	currTrade = 0;
+
 	isTurnActive = false;
 	tradeData["type"] = static_cast<int>(codes_t::TRADE_REQUEST);
 
@@ -48,6 +50,41 @@ auto BackEnd::sendTrade() -> void
 auto BackEnd::clearTrade() -> void
 {
 	qDebug() << "clearTrade";
+}
+
+auto BackEnd::tradeInfo(const QString &res) -> qint32
+{
+	//qDebug() << res;
+	if (!(0 < trades.size())) {
+		return 0;
+	}
+	qint32 ret = 0;
+
+	if ("next" == res) {
+		currTrade = (currTrade+1) % trades.size();
+	} else if ("prev" == res) {
+		currTrade = (currTrade-1 + trades.size()) % trades.size();
+	} else if ("stone_client_offer" == res) {
+		ret = trades.at(currTrade)->getAmountOffered().stone;
+	} else if ("iron_client_offer" == res) {
+		ret = trades.at(currTrade)->getAmountOffered().iron;
+	} else if ("wood_client_offer" == res) {
+		ret = trades.at(currTrade)->getAmountOffered().wood;
+	} else if ("food_client_offer" == res) {
+		ret = trades.at(currTrade)->getAmountOffered().food;
+	} else if ("stone_client_demand" == res) {
+		ret = trades.at(currTrade)->getAmountRequested().stone;
+	} else if ("iron_client_demand" == res) {
+		ret = trades.at(currTrade)->getAmountRequested().iron;
+	} else if ("wood_client_demand" == res) {
+		ret = trades.at(currTrade)->getAmountRequested().wood;
+	} else if ("food_client_demand" == res) {
+		ret = trades.at(currTrade)->getAmountRequested().food;
+	} else {
+		qDebug() << "wut u doin' 'ere?";
+	}
+
+	return ret;
 }
 
 auto BackEnd::startGame(const QString &uname) -> void
@@ -120,6 +157,7 @@ auto BackEnd::recieveTradeOffer(const QByteArray &data) -> void
 	sender = tradeData["sender"].toString();
 
 	Trade *newTrade = new Trade(tradeID, sender, amountOffered, amountRequested, this);
+	trades.prepend(newTrade);
 	// TODO: display trade offer
 }
 
@@ -181,8 +219,6 @@ auto BackEnd::setIronRes(const QString &ironRes) -> void
 	inventory.iron = ironRes.toInt();
 	emit ironResChanged();
 }
-
-
 
 
 

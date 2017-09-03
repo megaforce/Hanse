@@ -34,7 +34,9 @@ public:
 	Q_INVOKABLE void sendTrade();
 	Q_INVOKABLE void clearTrade();
 
-	void startup(){
+	Q_INVOKABLE qint32 tradeInfo(const QString &res);
+
+	void startup(){ //WHYYYYY
 		QObject::connect(papp, SIGNAL(aboutToQuit()), this, SLOT(cleanup()));
 	}
 
@@ -74,6 +76,9 @@ private:
 	QString username;
 	QStringList players;
 	bool isTurnActive;
+
+	QList<Trade *> trades;
+	qint16 currTrade;
 };
 
 #endif // BACKEND_H

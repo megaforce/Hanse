@@ -176,25 +176,26 @@ auto BackEnd::endOfTurn(const QByteArray &data) -> void
 
 
 void BackEnd::acceptTrade(
-                qint32 wood,
-                qint32 stone,
-                qint32 iron,
-                qint32 food)
+                QString wood,
+                QString stone,
+                QString iron,
+                QString food)
 {
+	qDebug() << trades.size();
 	QJsonObject tradeDetails
 	{
 		{"type", static_cast<int>(codes_t::TRADE_ACCEPT)},
 		{"tradeID", trades.at(currTrade)->getTradeID()},
 
-		{"woodAmount", wood},
-		{"stoneAmount", stone},
-		{"ironAmount", iron},
-		{"foodAmount", food}
+		{"woodAmount", wood.toInt()},
+		{"stoneAmount", stone.toInt()},
+		{"ironAmount", iron.toInt()},
+		{"foodAmount", food.toInt()}
 	};
 	QJsonDocument doc;
 	doc.setObject(tradeDetails);
 	emit sendData(doc.toBinaryData());
-	delete trades.at(currTrade);
+	//delete trades.at(currTrade);
 	trades.removeAt(currTrade);
 	currTrade = currTrade % trades.size();
 }

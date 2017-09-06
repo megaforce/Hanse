@@ -33,7 +33,7 @@ public:
 	Q_INVOKABLE void startGame(const QString &uname);
 	Q_INVOKABLE void sendTrade();
 	Q_INVOKABLE void clearTrade();
-	Q_INVOKABLE void acceptTrade(qint32 wood, qint32 stone, qint32 iron, qint32 food);
+	Q_INVOKABLE void acceptTrade(QString wood, QString stone, QString iron, QString food);
 	Q_INVOKABLE void denyTrade();
 
 	Q_INVOKABLE qint32 tradeInfo(const QString &res);

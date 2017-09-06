@@ -54,8 +54,8 @@ auto BackEnd::clearTrade() -> void
 
 auto BackEnd::tradeInfo(const QString &res) -> qint32
 {
-	//qDebug() << res;
-	if (!(0 < trades.size())) {
+	qDebug() << res;
+	if (trades.size() <= 0) {
 		return 0;
 	}
 	qint32 ret = 0;

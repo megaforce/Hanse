@@ -240,11 +240,11 @@ Image{
             }
             TextField
             {
-                id: acctual
+                id: actual
                 height: ctf.height /8.2
                 width: ctf.width /4.3
                 enabled: true
-                text: "Acctual resources"
+                text: "Actual resources"
                 anchors.margins: 10
                 anchors.topMargin: 0
                 anchors.left: player_demand.right

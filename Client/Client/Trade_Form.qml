@@ -340,7 +340,7 @@ Image{
                 id: resource
                 height: tf.height / 8.2
                 width: tf.width / 4.5
-                text: "Acctual resources"
+                text: "Actual resources"
                 readOnly: true
                 anchors.margins: 10
                 anchors.left: request.right

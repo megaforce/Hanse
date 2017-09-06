@@ -195,7 +195,7 @@ void BackEnd::acceptTrade(
 	QJsonDocument doc;
 	doc.setObject(tradeDetails);
 	emit sendData(doc.toBinaryData());
-	//delete trades.at(currTrade);
+	delete trades.at(currTrade);
 	trades.removeAt(currTrade);
 	currTrade = currTrade % trades.size();
 }

@@ -254,6 +254,7 @@ Image{
                 id: send_stone
                 height: ptf.height /8.2
                 width: ptf.width /4.3
+                text: ""
                 anchors.margins: 10
                 anchors.leftMargin: 0
                 anchors.left: acctual.left
@@ -271,6 +272,7 @@ Image{
                 id: send_iron
                 height: ptf.height /8.2
                 width: ptf.width /4.3
+                text: ""
                 anchors.margins: 10
                 anchors.leftMargin: 0
                 anchors.left: send_stone.left
@@ -288,6 +290,7 @@ Image{
                 id: send_wood
                 height: ptf.height /8.2
                 width: ptf.width /4.3
+                text: ""
                 anchors.margins: 10
                 anchors.leftMargin: 0
                 anchors.left: send_iron.left
@@ -305,6 +308,7 @@ Image{
                 id: send_food
                 height: ptf.height /8.2
                 width: ptf.width /4.3
+                text: ""
                 anchors.margins: 10
                 anchors.leftMargin: 0
                 anchors.left: send_wood.left
@@ -329,7 +333,7 @@ Image{
                 MouseArea {
                     anchors.fill: parent
                     onClicked:{
-                        backend.denyTrade();
+                        backend.acceptTrade(send_wood.getText(), send_stone.getText(), send_iron.getText(), send_food.getText());
                     }
                 }
             }
@@ -346,11 +350,7 @@ Image{
                 MouseArea {
                     anchors.fill: parent
                     onClicked:{
-                        backend.acceptTrade(
-                                    send_wood.getText(),
-                                    send_stone.getText(),
-                                    send_iron.getText(),
-                                    send_food.getText());
+                        backend.denyTrade();
                     }
                 }
             }

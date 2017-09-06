@@ -28,9 +28,8 @@ Window {
     Map{
         id: main_menu;
         width: parent.width;
+        source: "/File/image/background.png";
         height: parent.height;
-        color: "Black";
-
         Button{
             id: start_game;
             anchors.centerIn: parent;
@@ -79,7 +78,7 @@ Window {
         id: main_map;
         width: parent.width;
         height: parent.height;
-        color: "blue";
+        source: "/File/image/Sea.png";
         Resource_Form{
             id: resources;
             fillMode: Image.PreserveAspectFit

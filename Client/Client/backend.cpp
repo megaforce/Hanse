@@ -186,10 +186,10 @@ void BackEnd::acceptTrade(
 		{"type", static_cast<int>(codes_t::TRADE_ACCEPT)},
 		{"tradeID", trades.at(currTrade)->getTradeID()},
 
-		{"woodAmount", ui->sb_woodAccepted->value()},
-		{"stoneAmount", ui->sb_stoneAccepted->value()},
-		{"ironAmount", ui->sb_ironAccepted->value()},
-		{"foodAmount", ui->sb_foodAccepted->value()}
+		{"woodAmount", wood},
+		{"stoneAmount", stone},
+		{"ironAmount", iron},
+		{"foodAmount", food}
 	};
 	QJsonDocument doc;
 	doc.setObject(tradeDetails);

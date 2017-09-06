@@ -105,6 +105,7 @@ Window {
         }
 
         Island{
+
             fillMode: Image.PreserveAspectFit;
             source: "/File/image/island1.png";
             width: main_map.width / 5;
@@ -117,6 +118,13 @@ Window {
             id: island_1;
             anchors.left: parent.left;
             anchors.top: parent.top;
+            TextField{
+            id: player_1_name
+            text:"First player"
+            readOnly: true
+            anchors.left: island_1.left
+            anchors.top: island_1.top
+            }
             MouseArea {
                 anchors.fill: parent;
                 onClicked: {
@@ -184,6 +192,13 @@ Window {
             id: island_2;
             anchors.right: parent.right;
             anchors.top: parent.top;
+            TextField{
+            id: player_2_name
+            text:"First player"
+            readOnly: true
+            anchors.left: island_2.left
+            anchors.top: island_2.top
+            }
             MouseArea {
                 anchors.fill: parent;
                 onClicked: {
@@ -252,6 +267,13 @@ Window {
             id: island_3;
             anchors.right: parent.right;
             anchors.bottom: parent.bottom;
+            TextField{
+            id: player_3_name
+            text:"First player"
+            readOnly: true
+            anchors.left: island_3.left
+            anchors.top: island_3.top
+            }
             MouseArea {
                 anchors.fill: parent;
                 onClicked: {
@@ -318,6 +340,13 @@ Window {
             id: island_4;
             anchors.left: parent.left;
             anchors.bottom: parent.bottom;
+            TextField{
+            id: player_4_name
+            text:"First player"
+            readOnly: true
+            anchors.left: island_4.left
+            anchors.top: island_4.top
+            }
             MouseArea {
                 anchors.fill: parent;
                 onClicked: {

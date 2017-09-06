@@ -327,7 +327,10 @@ Image{
                 anchors.margins: 10
                 anchors.leftMargin: 0
                 MouseArea {
-
+                    anchors.fill: parent
+                    onClicked:{
+                        backend.denyTrade();
+                    }
                 }
             }
             Button{
@@ -341,7 +344,14 @@ Image{
                 anchors.leftMargin: 0
                 //anchors.topMargin: 0
                 MouseArea {
-
+                    anchors.fill: parent
+                    onClicked:{
+                        backend.acceptTrade(
+                                    send_wood.getText(),
+                                    send_stone.getText(),
+                                    send_iron.getText(),
+                                    send_food.getText());
+                    }
                 }
             }
             Button{

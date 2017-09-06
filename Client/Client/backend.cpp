@@ -174,6 +174,46 @@ auto BackEnd::endOfTurn(const QByteArray &data) -> void
 	isTurnActive = false;
 }
 
+
+void BackEnd::acceptTrade(
+                qint32 wood,
+                qint32 stone,
+                qint32 iron,
+                qint32 food)
+{
+	QJsonObject tradeDetails
+	{
+		{"type", static_cast<int>(codes_t::TRADE_ACCEPT)},
+		{"tradeID", trades.at(currTrade)->getTradeID()},
+
+		{"woodAmount", ui->sb_woodAccepted->value()},
+		{"stoneAmount", ui->sb_stoneAccepted->value()},
+		{"ironAmount", ui->sb_ironAccepted->value()},
+		{"foodAmount", ui->sb_foodAccepted->value()}
+	};
+	QJsonDocument doc;
+	doc.setObject(tradeDetails);
+	emit sendData(doc.toBinaryData());
+	delete trades.at(currTrade);
+	trades.removeAt(currTrade);
+	currTrade = currTrade % trades.size();
+}
+
+void BackEnd::denyTrade()
+{
+	QJsonObject tradeDetails
+	{
+		{"type", static_cast<int>(codes_t::TRADE_DENY)},
+		{"tradeID", trades.at(currTrade)->getTradeID()},
+	};
+	QJsonDocument doc;
+	doc.setObject(tradeDetails);
+	emit sendData(doc.toBinaryData());
+	delete trades.at(currTrade);
+	trades.removeAt(currTrade);
+	currTrade = currTrade % trades.size();
+}
+
 auto BackEnd::foodRes() -> QString
 {
 	return QString::number(inventory.food);

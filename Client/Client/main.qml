@@ -92,11 +92,6 @@ Window {
             visible: false;
             anchors.centerIn: main_map;
         }
-        Client_Trade_Form{
-            id: client_trade_form;
-            visible: false;
-            anchors.centerIn: main_map;
-        }
         Pending_Trade_Form{
             id: pending_trade_form
             visible: false

@@ -1,5 +1,6 @@
 #include "backend.h"
 #include <QDebug>
+#include <QMetaObject>
 
 BackEnd::BackEnd(QObject *parent) :
         QObject(parent)
@@ -133,6 +134,7 @@ auto BackEnd::setState(const QByteArray &data) -> void
 	emit woodResChanged();
 	emit stoneResChanged();
 	emit ironResChanged();
+	QMetaObject::invokeMethod(pqmain, "refreshUserNames");
 }
 
 auto BackEnd::recieveTradeOffer(const QByteArray &data) -> void

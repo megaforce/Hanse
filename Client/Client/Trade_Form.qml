@@ -390,8 +390,21 @@ Image{
                     onClicked: {
                         backend.sendTrade()
                         tfp.visible=false;
+                        stone_sent.clear()
+                        food_sent.clear()
+                        iron_sent.clear()
+                        wood_sent.clear()
+                        stone_requested.clear()
+                        food_requested.clear()
+                        iron_requested.clear()
+                        wood_requested.clear()
+                        stone_resource.clear()
+                        iron_resource.clear()
+                        wood_resource.clear()
+                        food_resource.clear()
                     }
                 }
             }
-        } }
+        }
+    }
 }

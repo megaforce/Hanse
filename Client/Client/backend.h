@@ -15,7 +15,8 @@
 #include "globalvariables.h"
 #include "trade.h"
 
-extern QGuiApplication* papp;
+extern QGuiApplication *papp;
+extern QObject *pqmain;
 
 class BackEnd : public QObject
 {

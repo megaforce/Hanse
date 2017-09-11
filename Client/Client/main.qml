@@ -22,6 +22,14 @@ Window {
         id: backend;
     }
 
+
+    function refreshUserNames() {
+        player_1_name.text = backend.getPlayer(0);
+        player_2_name.text = backend.getPlayer(1);
+        player_3_name.text = backend.getPlayer(2);
+        player_4_name.text = backend.getPlayer(3);
+    }
+
     width: 1440;
     height: 900;
     visible: true;

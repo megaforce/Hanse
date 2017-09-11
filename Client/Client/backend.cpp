@@ -204,9 +204,7 @@ void BackEnd::acceptTrade(
 	doc.setObject(tradeDetails);
 	emit sendData(doc.toBinaryData());
 	delete trades.at(currTrade);
-//	qDebug() << "rss";
-//	trades.removeAt(currTrade);
-	currTrade = currTrade % trades.size();
+	trades.removeAt(currTrade);
 }
 
 void BackEnd::denyTrade()
@@ -220,8 +218,7 @@ void BackEnd::denyTrade()
 	doc.setObject(tradeDetails);
 	emit sendData(doc.toBinaryData());
 	delete trades.at(currTrade);
-//	trades.removeAt(currTrade);
-	currTrade = currTrade % trades.size();
+	trades.removeAt(currTrade);
 }
 
 auto BackEnd::foodRes() -> QString

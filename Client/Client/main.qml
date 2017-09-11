@@ -41,9 +41,20 @@ Window {
         Button{
             id: start_game;
             anchors.centerIn: parent;
+            anchors.bottomMargin: 10;
             text: "START GAME";
             onClicked: {
                 login.visible = true;
+            }
+        }
+        Button{
+            id: exit_game;
+            anchors.left: start_game.left
+            anchors.topMargin: 10;
+            anchors.top: start_game.bottom
+            text: "EXIT GAME";
+            onClicked: {
+                root.close();
             }
         }
         Login_form{

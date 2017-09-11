@@ -205,7 +205,7 @@ void BackEnd::acceptTrade(
 	emit sendData(doc.toBinaryData());
 	delete trades.at(currTrade);
 	trades.removeAt(currTrade);
-	if(trades.size() > 0) {
+	if(trades.size() > 1) {
 		--currTrade;
 	}
 }
@@ -222,7 +222,7 @@ void BackEnd::denyTrade()
 	emit sendData(doc.toBinaryData());
 	delete trades.at(currTrade);
 	trades.removeAt(currTrade);
-	if(trades.size() > 0) {
+	if(trades.size() > 1) {
 		--currTrade;
 	}
 }

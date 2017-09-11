@@ -37,6 +37,7 @@ public:
 	Q_INVOKABLE void denyTrade();
 
 	Q_INVOKABLE qint32 tradeInfo(const QString &res);
+	Q_INVOKABLE QString getPlayer(const qint32 &pl);
 
 	void startup(){ //WHYYYYY
 		QObject::connect(papp, SIGNAL(aboutToQuit()), this, SLOT(cleanup()));

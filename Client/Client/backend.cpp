@@ -7,6 +7,10 @@ BackEnd::BackEnd(QObject *parent) :
 	qDebug() << "init";
 
 	currTrade = 0;
+	players.append("Waiting for all players to join");
+	players.append("Waiting for all players to join");
+	players.append("Waiting for all players to join");
+	players.append("Waiting for all players to join");
 
 	isTurnActive = false;
 	tradeData["type"] = static_cast<int>(codes_t::TRADE_REQUEST);
@@ -85,6 +89,11 @@ auto BackEnd::tradeInfo(const QString &res) -> qint32
 	}
 
 	return ret;
+}
+
+auto BackEnd::getPlayer(const qint32 &pl) -> QString
+{
+	return players.at(pl);
 }
 
 auto BackEnd::startGame(const QString &uname) -> void

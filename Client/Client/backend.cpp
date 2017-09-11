@@ -106,8 +106,6 @@ auto BackEnd::startGame(const QString &uname) -> void
 
 auto BackEnd::setState(const QByteArray &data) -> void
 {
-	qDebug() << "setState";
-
 	// converts data back to json
 	QJsonDocument stateDataDocument = QJsonDocument::fromBinaryData(data);
 	QJsonObject stateData = stateDataDocument.object();
@@ -139,7 +137,6 @@ auto BackEnd::setState(const QByteArray &data) -> void
 
 auto BackEnd::recieveTradeOffer(const QByteArray &data) -> void
 {
-	qDebug() << "recieveTradeOffer";
 
 	// converts data back to json
 	QJsonDocument tradeDataDocument = QJsonDocument::fromBinaryData(data);
@@ -174,7 +171,6 @@ auto BackEnd::recieveTradeOffer(const QByteArray &data) -> void
 
 auto BackEnd::endOfTurn(const QByteArray &data) -> void
 {
-	qDebug() << "endOfTurn";
 
 	// converts data back to json
 	QJsonDocument stateDataDocument = QJsonDocument::fromBinaryData(data);
@@ -183,6 +179,7 @@ auto BackEnd::endOfTurn(const QByteArray &data) -> void
 	// returns if data is not meant for state
 	if(static_cast<codes_t>(stateData["type"].toInt()) != codes_t::TURN_END) return;
 	isTurnActive = false;
+	qDebug() << "endOfTurn";
 }
 
 
@@ -207,7 +204,8 @@ void BackEnd::acceptTrade(
 	doc.setObject(tradeDetails);
 	emit sendData(doc.toBinaryData());
 	delete trades.at(currTrade);
-	trades.removeAt(currTrade);
+//	qDebug() << "rss";
+//	trades.removeAt(currTrade);
 	currTrade = currTrade % trades.size();
 }
 
@@ -222,7 +220,7 @@ void BackEnd::denyTrade()
 	doc.setObject(tradeDetails);
 	emit sendData(doc.toBinaryData());
 	delete trades.at(currTrade);
-	trades.removeAt(currTrade);
+//	trades.removeAt(currTrade);
 	currTrade = currTrade % trades.size();
 }
 

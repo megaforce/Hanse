@@ -4,7 +4,21 @@ import QtQuick.Dialogs 1.2
 import QtQuick.Controls.Styles 1.4
 import trade.backend 1.0
 
-//TODO needs a fetch called when the menu opens;
+ /************************************************************************************************************************
+ *                                                   If I ever have to work                                              *
+ *                                                   on a code as bad as this                                            *
+ *                                                   I'm going to do something                                           *
+ *                                                   drastic.........                                                    *
+ *                                                                        -Matjaz                                        *
+ *                                                                                                                       *
+ ************************************************************************************************************************/
+
+ /************************************************************************************************************************
+ *                                                   a code? A CODE?                                                     *
+ *                                                   what is this a india?                                               *
+ *                                                                        -Muf                                           *
+ *                                                                                                                       *
+ ************************************************************************************************************************/
 
 Image{
     height: parent.height /3.5
@@ -332,7 +346,7 @@ Image{
                 anchors.leftMargin: 0
                 MouseArea {
                     anchors.fill: parent
-                    onClicked:{ //wood,stone,iron,food
+                    onClicked:{
                         backend.acceptTrade(send_wood.text, send_stone.text, send_iron.text, send_food.text);
                     }
                 }

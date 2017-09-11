@@ -205,6 +205,9 @@ void BackEnd::acceptTrade(
 	emit sendData(doc.toBinaryData());
 	delete trades.at(currTrade);
 	trades.removeAt(currTrade);
+	if(trades.size() > 0) {
+		--currTrade;
+	}
 }
 
 void BackEnd::denyTrade()
@@ -219,6 +222,9 @@ void BackEnd::denyTrade()
 	emit sendData(doc.toBinaryData());
 	delete trades.at(currTrade);
 	trades.removeAt(currTrade);
+	if(trades.size() > 0) {
+		--currTrade;
+	}
 }
 
 auto BackEnd::foodRes() -> QString

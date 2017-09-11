@@ -15,6 +15,7 @@ import trade.backend 1.0
 ************************************************************************************************************************/
 
 Image{
+    id:tfp
     anchors.centerIn: parent
     height: parent.height /3.5
     width: parent.width /2
@@ -388,6 +389,7 @@ Image{
                     anchors.fill: send
                     onClicked: {
                         backend.sendTrade()
+                        tfp.visible=false;
                     }
                 }
             }

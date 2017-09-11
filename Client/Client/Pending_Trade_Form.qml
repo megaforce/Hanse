@@ -332,8 +332,8 @@ Image{
                 anchors.leftMargin: 0
                 MouseArea {
                     anchors.fill: parent
-                    onClicked:{
-                        backend.acceptTrade(send_wood.getText(), send_stone.getText(), send_iron.getText(), send_food.getText());
+                    onClicked:{ //wood,stone,iron,food
+                        backend.acceptTrade(send_wood.text, send_stone.text, send_iron.text, send_food.text);
                     }
                 }
             }

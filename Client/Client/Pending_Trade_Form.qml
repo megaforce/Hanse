@@ -4,7 +4,7 @@ import QtQuick.Dialogs 1.2
 import QtQuick.Controls.Styles 1.4
 import trade.backend 1.0
 
- /************************************************************************************************************************
+/************************************************************************************************************************
  *                                                   If I ever have to work                                              *
  *                                                   on a code as bad as this                                            *
  *                                                   I'm going to do something                                           *
@@ -13,7 +13,7 @@ import trade.backend 1.0
  *                                                                                                                       *
  ************************************************************************************************************************/
 
- /************************************************************************************************************************
+/************************************************************************************************************************
  *                                                   a code? A CODE?                                                     *
  *                                                   what is this a india?                                               *
  *                                                                        -Muf                                           *
@@ -21,6 +21,7 @@ import trade.backend 1.0
  ************************************************************************************************************************/
 
 Image{
+    id: ptfq
     height: parent.height /3.5
     width: parent.width /2
     Rectangle{
@@ -348,6 +349,7 @@ Image{
                     anchors.fill: parent
                     onClicked:{
                         backend.acceptTrade(send_wood.text, send_stone.text, send_iron.text, send_food.text);
+                        ptfq.visible = false;
                     }
                 }
             }
@@ -365,6 +367,7 @@ Image{
                     anchors.fill: parent
                     onClicked:{
                         backend.denyTrade();
+                        ptfq.visible = false;
                     }
                 }
             }

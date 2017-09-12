@@ -45,6 +45,7 @@ Window {
             text: "START GAME";
             onClicked: {
                 login.visible = true;
+                exit_game.visible=false;
             }
         }
         Button{

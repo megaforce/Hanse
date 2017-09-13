@@ -48,8 +48,8 @@ Image{
             TextField{
                 height: ptf.height /8.2
                 width: ptf.width /4.3
-                id: blank
-                visible: false
+                id: from
+                text: "someone"
                 anchors.leftMargin: 10
                 anchors.topMargin: 10
                 anchors.rightMargin: 10
@@ -57,7 +57,9 @@ Image{
                 enabled: true
                 anchors.left: parent.left
                 anchors.top: parent.top
-                color: "black"
+                color: "Green"
+                opacity: 1000
+                readOnly: true
             }
             TextField
             {
@@ -67,8 +69,8 @@ Image{
                 enabled: true
                 text: "Stone"
                 anchors.topMargin: 10
-                anchors.right: blank.right
-                anchors.top: blank.bottom
+                anchors.right: from.right
+                anchors.top: from.bottom
                 color: "Green"
                 opacity: 1000
                 readOnly: true
@@ -121,8 +123,8 @@ Image{
                 width: ptf.width /4.3
                 text: "Player offer"
                 enabled: true
-                anchors.left: blank.right
-                anchors.top: blank.top
+                anchors.left: from.right
+                anchors.top: from.top
                 anchors.margins: 10
                 anchors.topMargin: 0
                 color: "Green"

@@ -99,6 +99,10 @@ Window {
         width: parent.width;
         height: parent.height;
         source: "/File/image/Sea.png";
+        Round_Timer{
+            id: turns;
+            anchors.centerIn: parent
+        }
         Resource_Form{
             id: resources;
             fillMode: Image.PreserveAspectFit

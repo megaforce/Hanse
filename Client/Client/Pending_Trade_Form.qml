@@ -56,6 +56,13 @@ Image{
                 wood_client_demand.text = backend.tradeInfo("wood_client_demand");
                 food_client_demand.text = backend.tradeInfo("food_client_demand");
             }
+            function check_resources(){
+                var food,wood,stone,iron;
+                food = send_food;
+                wood = send_wood;
+                stone = send_stone;
+                iron = send_iron;
+            }
 
             TextField{
                 height: ptf.height /8.2
@@ -331,6 +338,7 @@ Image{
                 color: "Green"
                 opacity: 1000
             }
+
             TextField
             {
                 id: send_food
@@ -362,6 +370,7 @@ Image{
                     anchors.fill: parent
                     onClicked:{
 //                        ptfq.visible = false;
+                        ptf.check_resources();
                         backend.acceptTrade(send_wood.text, send_stone.text, send_iron.text, send_food.text);
                         ptf.clean();
                         ptf.fetch();

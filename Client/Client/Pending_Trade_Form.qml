@@ -35,6 +35,7 @@ Image{
             width: parent.width
             id: ptf
             function fetch() {
+                from.text = backend.tradeInfo("from");
                 stone_client_offer.text = backend.tradeInfo("stone_client_offer");
                 iron_client_offer.text = backend.tradeInfo("iron_client_offer");
                 wood_client_offer.text = backend.tradeInfo("wood_client_offer");
@@ -49,7 +50,6 @@ Image{
                 height: ptf.height /8.2
                 width: ptf.width /4.3
                 id: from
-                text: "someone"
                 anchors.leftMargin: 10
                 anchors.topMargin: 10
                 anchors.rightMargin: 10

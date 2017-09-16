@@ -69,6 +69,8 @@ auto BackEnd::tradeInfo(const QString &res) -> qint32
 		currTrade = (currTrade+1) % trades.size();
 	} else if ("prev" == res) {
 		currTrade = (currTrade-1 + trades.size()) % trades.size();
+	} else if ("from" == res) {
+		ret = trades.at(currTrade)->getSender();
 	} else if ("stone_client_offer" == res) {
 		ret = trades.at(currTrade)->getAmountOffered().stone;
 	} else if ("iron_client_offer" == res) {

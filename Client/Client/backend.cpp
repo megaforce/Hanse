@@ -57,13 +57,13 @@ auto BackEnd::clearTrade() -> void
 	qDebug() << "clearTrade";
 }
 
-auto BackEnd::tradeInfo(const QString &res) -> qint32
+auto BackEnd::tradeInfo(const QString &res) -> QString
 {
 	qDebug() << res;
 	if (trades.size() <= 0) {
 		return 0;
 	}
-	qint32 ret = 0;
+	QString ret = 0;
 
 	if ("next" == res) {
 		currTrade = (currTrade+1) % trades.size();
@@ -74,19 +74,19 @@ auto BackEnd::tradeInfo(const QString &res) -> qint32
 	} else if ("stone_client_offer" == res) {
 		ret = trades.at(currTrade)->getAmountOffered().stone;
 	} else if ("iron_client_offer" == res) {
-		ret = trades.at(currTrade)->getAmountOffered().iron;
+		ret = QString::number(trades.at(currTrade)->getAmountOffered().iron);
 	} else if ("wood_client_offer" == res) {
-		ret = trades.at(currTrade)->getAmountOffered().wood;
+		ret = QString::number(trades.at(currTrade)->getAmountOffered().wood);
 	} else if ("food_client_offer" == res) {
-		ret = trades.at(currTrade)->getAmountOffered().food;
+		ret = QString::number(trades.at(currTrade)->getAmountOffered().food);
 	} else if ("stone_client_demand" == res) {
-		ret = trades.at(currTrade)->getAmountRequested().stone;
+		ret = QString::number(trades.at(currTrade)->getAmountRequested().stone);
 	} else if ("iron_client_demand" == res) {
-		ret = trades.at(currTrade)->getAmountRequested().iron;
+		ret = QString::number(trades.at(currTrade)->getAmountRequested().iron);
 	} else if ("wood_client_demand" == res) {
-		ret = trades.at(currTrade)->getAmountRequested().wood;
+		ret = QString::number(trades.at(currTrade)->getAmountRequested().wood);
 	} else if ("food_client_demand" == res) {
-		ret = trades.at(currTrade)->getAmountRequested().food;
+		ret = QString::number(trades.at(currTrade)->getAmountRequested().food);
 	} else {
 		qDebug() << "wut u doin' 'ere?";
 	}

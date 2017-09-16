@@ -21,10 +21,10 @@ Image{
     width: parent.width /2
     function check_resources(){
         var food,wood,stone,iron;
-        food = food_sent;
-        wood = send_wood;
-        stone = send_stone;
-        iron = send_iron;
+        food = food_resource;
+        wood = wood_resource;
+        stone = stone_resource;
+        iron = iron_resource;
         if (backend.foodRes < food || food < 0)
         {
             send_food.text="0";

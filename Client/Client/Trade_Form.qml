@@ -19,6 +19,29 @@ Image{
     anchors.centerIn: parent
     height: parent.height /3.5
     width: parent.width /2
+    function check_resources(){
+        var food,wood,stone,iron;
+        food = food_sent;
+        wood = send_wood;
+        stone = send_stone;
+        iron = send_iron;
+        if (backend.foodRes < food || food < 0)
+        {
+            send_food.text="0";
+        }
+        if (backend.woodRes < wood || wood < 0)
+        {
+            send_wood.text="0";
+        }
+        if (backend.stoneRes < stone || stone < 0)
+        {
+            send_stone.text="0";
+        }
+        if (backend.ironRes < iron || iron < 0)
+        {
+            send_iron.text="0";
+        }
+    }
     Rectangle{
         height: parent.height
         width: parent.width
@@ -388,6 +411,7 @@ Image{
                 MouseArea {
                     anchors.fill: send
                     onClicked: {
+                        tfp.check_resources();
                         backend.sendTrade()
                         tfp.visible=false;
                         stone_sent.clear()

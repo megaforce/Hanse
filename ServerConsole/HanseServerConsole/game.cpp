@@ -21,8 +21,7 @@ void Game::sendStateData()
         QJsonArray allPlayers;
         foreach(Player* opponent, players)
         {
-            if(opponent != player)
-                allPlayers.append(opponent->getUsername());
+               allPlayers.append(opponent->getUsername());
         }
 
         stateData["players"]    = allPlayers;

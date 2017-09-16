@@ -62,6 +62,22 @@ Image{
                 wood = send_wood;
                 stone = send_stone;
                 iron = send_iron;
+                if (backend.foodRes < food || food < 0)
+                {
+                    send_food.text="0";
+                }
+                if (backend.woodRes < wood || wood < 0)
+                {
+                    send_wood.text="0";
+                }
+                if (backend.stoneRes < stone || stone < 0)
+                {
+                    send_stone.text="0";
+                }
+                if (backend.ironRes < iron || iron < 0)
+                {
+                    send_iron.text="0";
+                }
             }
 
             TextField{

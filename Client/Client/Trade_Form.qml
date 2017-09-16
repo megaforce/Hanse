@@ -27,19 +27,19 @@ Image{
         iron = iron_resource;
         if (backend.foodRes < food || food < 0)
         {
-            send_food.text="0";
+            food_resource.text="0";
         }
         if (backend.woodRes < wood || wood < 0)
         {
-            send_wood.text="0";
+            wood_resource.text="0";
         }
         if (backend.stoneRes < stone || stone < 0)
         {
-            send_stone.text="0";
+            stone_resource.text="0";
         }
         if (backend.ironRes < iron || iron < 0)
         {
-            send_iron.text="0";
+            iron_resource.text="0";
         }
     }
     Rectangle{

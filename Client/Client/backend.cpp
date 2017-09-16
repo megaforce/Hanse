@@ -191,7 +191,9 @@ void BackEnd::acceptTrade(
                 QString iron,
                 QString food)
 {
-	qDebug() << trades.size();
+	if (trades.size() < 1){
+		return;
+	}
 	QJsonObject tradeDetails
 	{
 		{"type", static_cast<int>(codes_t::TRADE_ACCEPT)},
@@ -214,6 +216,9 @@ void BackEnd::acceptTrade(
 
 void BackEnd::denyTrade()
 {
+	if (trades.size() < 1){
+		return;
+	}
 	QJsonObject tradeDetails
 	{
 		{"type", static_cast<int>(codes_t::TRADE_DENY)},

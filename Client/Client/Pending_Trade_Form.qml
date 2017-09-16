@@ -34,6 +34,17 @@ Image{
             height: parent.height
             width: parent.width
             id: ptf
+            function clean() {
+                from.clear();
+                stone_client_offer.clear();
+                iron_client_offer.clear();
+                wood_client_offer.clear();
+                food_client_offer.clear();
+                stone_client_demand.clear();
+                iron_client_demand.clear();
+                wood_client_demand.clear();
+                food_client_demand.clear();
+            }
             function fetch() {
                 from.text = backend.tradeInfo("from");
                 stone_client_offer.text = backend.tradeInfo("stone_client_offer");
@@ -350,8 +361,10 @@ Image{
                 MouseArea {
                     anchors.fill: parent
                     onClicked:{
+//                        ptfq.visible = false;
                         backend.acceptTrade(send_wood.text, send_stone.text, send_iron.text, send_food.text);
-                        ptfq.visible = false;
+                        ptf.clean();
+                        ptf.fetch();
                     }
                 }
             }
@@ -368,8 +381,10 @@ Image{
                 MouseArea {
                     anchors.fill: parent
                     onClicked:{
+//                        ptfq.visible = false;
                         backend.denyTrade();
-                        ptfq.visible = false;
+                        ptf.clean();
+                        ptf.fetch();
                     }
                 }
             }

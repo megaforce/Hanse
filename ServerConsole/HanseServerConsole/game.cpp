@@ -5,7 +5,10 @@ qint16 Game::idFromName(const QString &name)
 {
     foreach(Player* player, players)
     {
-        return players.key(player);
+        if(player->getUsername() == name)
+        {
+            return players.key(player);
+        }
     }
     return -1;
 }

@@ -57,24 +57,29 @@ Image{
                 food_client_demand.text = backend.tradeInfo("food_client_demand");
             }
             function check_resources(){
-                var food,wood,stone,iron;
-                food = send_food.text;
-                wood = send_wood.text;
-                stone = send_stone.text;
-                iron = send_iron.text;
-                if (backend.foodRes < food || food < 0)
+                var food = number(send_food.text);
+                var wood = number(send_wood.text);
+                var stone = number(send_stone.text);
+                var iron = number(send_iron.text);
+
+                var back_food = number(backend.foodRes);
+                var back_wood = number(backend.woodRes);
+                var back_stone = number(backend.stoneRes);
+                var back_iron = number(backend.ironRes);
+
+                if (back_food < food || food < 0)
                 {
                     send_food.text="0";
                 }
-                if (backend.woodRes < wood || wood < 0)
+                if (back_wood < wood || wood < 0)
                 {
                     send_wood.text="0";
                 }
-                if (backend.stoneRes < stone || stone < 0)
+                if (back_stone < stone || stone < 0)
                 {
                     send_stone.text="0";
                 }
-                if (backend.ironRes < iron || iron < 0)
+                if (back_iron < iron || iron < 0)
                 {
                     send_iron.text="0";
                 }

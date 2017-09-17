@@ -12,7 +12,7 @@ import QtQuick.Dialogs 1.2
 
 Image{
     visible: true
-    enabled: false
+
     height: parent.height / 10
     width: parent.width /8
     Item{
@@ -20,6 +20,7 @@ Image{
         height: parent.height
         width: parent.width
         TextField{
+            readOnly: true
             id: food
             height: rf.height /4
             width: rf.width /2
@@ -28,6 +29,7 @@ Image{
             anchors.left: parent.left
         }
         TextField{
+            readOnly: true
             id: wood
             height: rf.height /4
             width: rf.width /2
@@ -36,6 +38,7 @@ Image{
             anchors.left: parent.left
         }
         TextField{
+            readOnly: true
             id: stone
             height: rf.height /4
             width: rf.width /2
@@ -44,6 +47,7 @@ Image{
             anchors.left: parent.left
         }
         TextField{
+            readOnly: true
             id: iron
             height: rf.height /4
             width: rf.width /2
@@ -52,6 +56,7 @@ Image{
             anchors.left: parent.left
         }
         TextField{
+            readOnly: true
             id: food_ammount
             height: rf.height /4
             width: rf.width /2
@@ -60,6 +65,7 @@ Image{
             anchors.left: food.right
         }
         TextField{
+            readOnly: true
             id: wood_ammount
             height: rf.height /4
             width: rf.width /2
@@ -68,6 +74,7 @@ Image{
             anchors.left: food_ammount.left
         }
         TextField{
+            readOnly: true
             id: stone_ammount
             height: rf.height /4
             width: rf.width /2
@@ -76,6 +83,7 @@ Image{
             anchors.left: wood_ammount.left
         }
         TextField{
+            readOnly: true
             id: iron_ammount
             height: rf.height /4
             width: rf.width /2

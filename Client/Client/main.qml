@@ -15,6 +15,14 @@ import trade.backend 1.0
 ************************************************************************************************************************/
 
 
+/************************************************************************************************************************
+*                                           My will to live                                                             *
+*                                           doesn't exist                                                               *
+*                                           anymore                                                                     *
+*                                                                -Majtaz                                                *
+*                                                                                                                       *
+************************************************************************************************************************/
+
 
 Window {
     id: root;
@@ -34,6 +42,7 @@ Window {
     height: 900;
     visible: true;
     Map{
+
         id: main_menu;
         width: parent.width;
         source: "/File/image/background.png";
@@ -76,6 +85,7 @@ Window {
                     opacity: 1000;
                 }
                 Button{
+
                     id: connect;
                     text: "CONNECT";
                     anchors.top: username.bottom;
@@ -101,7 +111,11 @@ Window {
         source: "/File/image/Sea.png";
         Round_Timer{
             id: turns;
-            anchors.centerIn: parent
+            fillMode: Image.PreserveAspectFit;
+            anchors.left: resources.right
+            anchors.top: resources.top
+            anchors.bottomMargin: 100;
+            anchors.leftMargin: 30;
         }
         Resource_Form{
             id: resources;
@@ -109,6 +123,7 @@ Window {
             anchors.bottom: main_map.bottom;
             anchors.left: island_4.right;
             anchors.margins: 10;
+            anchors.leftMargin: 200;
         }
         Trade_Form{
             id: trade_form;
@@ -117,6 +132,7 @@ Window {
             anchors.centerIn: main_map;
         }
         Pending_Trade_Form{
+            fillMode: Image.PreserveAspectFit;
             id: pending_trade_form
             visible: false
             anchors.centerIn: main_map

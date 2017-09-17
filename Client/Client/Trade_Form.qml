@@ -20,24 +20,29 @@ Image{
     height: parent.height /3.5
     width: parent.width /2
     function check_resources(){
-        var food,wood,stone,iron;
-        food = food_resource.text;
-        wood = wood_resource.text;
-        stone = stone_resource.text;
-        iron = iron_resource.text;
-        if (backend.foodRes < food || food < 0)
+        var food = number(food_resource.text);
+        var wood = number(wood_resource.text);
+        var stone = number(stone_resource.text);
+        var iron = number(iron_resource.text);
+
+        var back_food = number(backend.foodRes);
+        var back_wood = number(backend.woodRes);
+        var back_stone = number(backend.stoneRes);
+        var back_iron = number(backend.ironRes);
+
+        if (back_food < food || food < 0)
         {
             food_resource.text="0";
         }
-        if (backend.woodRes < wood || wood < 0)
+        if (back_wood < wood || wood < 0)
         {
             wood_resource.text="0";
         }
-        if (backend.stoneRes < stone || stone < 0)
+        if (back_stone < stone || stone < 0)
         {
             stone_resource.text="0";
         }
-        if (backend.ironRes < iron || iron < 0)
+        if (back_iron < iron || iron < 0)
         {
             iron_resource.text="0";
         }

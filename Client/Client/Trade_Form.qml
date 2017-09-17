@@ -21,10 +21,10 @@ Image{
     width: parent.width /2
     function check_resources(){
         var food,wood,stone,iron;
-        food = food_resource;
-        wood = wood_resource;
-        stone = stone_resource;
-        iron = iron_resource;
+        food = food_resource.text;
+        wood = wood_resource.text;
+        stone = stone_resource.text;
+        iron = iron_resource.text;
         if (backend.foodRes < food || food < 0)
         {
             food_resource.text="0";
@@ -411,7 +411,7 @@ Image{
                 MouseArea {
                     anchors.fill: send
                     onClicked: {
-                        tfp.check_resources();
+                        tfp.check_resources()
                         backend.sendTrade()
                         tfp.visible=false;
                         stone_sent.clear()

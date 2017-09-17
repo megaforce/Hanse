@@ -116,11 +116,30 @@ Window {
             anchors.top: resources.top
             anchors.bottomMargin: 100;
             anchors.leftMargin: 30;
-            TextField
-            {
-                readOnly: true
-                id:timer_text;
-                text:"20"
+            width: parent.width;
+            height: parent.height
+            Item{
+                width: parent.width;
+                height: parent.height
+                TextField
+                {
+                    width: parent.width/12
+                    anchors.left: turns.right
+                    anchors.top: turns.top
+                    readOnly: true
+                    id:timer_text_left;
+                    text:"TIME LEFT:"
+                }
+                TextField
+                {
+                    width: parent.width/12
+                    anchors.top: timer_text_left.bottom
+                    anchors.left: timer_text_left.left
+                    anchors.bottomMargin: 10
+                    readOnly: true
+                    id:timer_text;
+                    text:"20"
+                }
             }
         }
         Resource_Form{

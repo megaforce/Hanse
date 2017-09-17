@@ -20,15 +20,15 @@ Image{
     height: parent.height /3.5
     width: parent.width /2
     function check_resources(){
-        var food = number(food_resource.text);
-        var wood = number(wood_resource.text);
-        var stone = number(stone_resource.text);
-        var iron = number(iron_resource.text);
+        var food = Number(food_resource.text);
+        var wood = Number(wood_resource.text);
+        var stone = Number(stone_resource.text);
+        var iron = Number(iron_resource.text);
 
-        var back_food = number(backend.foodRes);
-        var back_wood = number(backend.woodRes);
-        var back_stone = number(backend.stoneRes);
-        var back_iron = number(backend.ironRes);
+        var back_food = Number(backend.foodRes);
+        var back_wood = Number(backend.woodRes);
+        var back_stone = Number(backend.stoneRes);
+        var back_iron = Number(backend.ironRes);
 
         if (back_food < food || food < 0)
         {

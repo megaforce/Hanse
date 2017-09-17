@@ -58,10 +58,10 @@ Image{
             }
             function check_resources(){
                 var food,wood,stone,iron;
-                food = send_food;
-                wood = send_wood;
-                stone = send_stone;
-                iron = send_iron;
+                food = send_food.text;
+                wood = send_wood.text;
+                stone = send_stone.text;
+                iron = send_iron.text;
                 if (backend.foodRes < food || food < 0)
                 {
                     send_food.text="0";

@@ -296,7 +296,7 @@ Image{
                 height: ptf.height /8.2
                 width: ptf.width /4.3
                 enabled: true
-                text: "Acctual resources"
+                text: "Actual resources"
                 anchors.margins: 10
                 anchors.topMargin: 0
                 anchors.left: player_demand.right

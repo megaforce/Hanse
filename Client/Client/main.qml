@@ -6,7 +6,7 @@ import trade.backend 1.0
 
 
 /************************************************************************************************************************
-*                                           Megaforce Graphic engine V.1                                                *
+*                                           Megaforce Graphic engine V.1.114                                            *
 *                                           Welcome to my graphic engine!                                               *
 *                                           God help anyone                                                             *
 *                                           trying to read this...                                                      *
@@ -116,6 +116,12 @@ Window {
             anchors.top: resources.top
             anchors.bottomMargin: 100;
             anchors.leftMargin: 30;
+            TextField
+            {
+                readOnly: true
+                id:timer_text;
+                text:"20"
+            }
         }
         Resource_Form{
             id: resources;

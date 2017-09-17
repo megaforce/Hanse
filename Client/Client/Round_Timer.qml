@@ -4,10 +4,5 @@ import QtQuick.Controls 2.2
 import QtQuick.Dialogs 1.2
 import QtQuick.Controls.Styles 1.4
 Image{
-    TextField
-    {
-        readOnly: true
-        id:timer_text;
-        text:"20"
-    }
+
 }

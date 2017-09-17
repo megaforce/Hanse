@@ -57,15 +57,15 @@ Image{
                 food_client_demand.text = backend.tradeInfo("food_client_demand");
             }
             function check_resources(){
-                var food = number(send_food.text);
-                var wood = number(send_wood.text);
-                var stone = number(send_stone.text);
-                var iron = number(send_iron.text);
+                var food = Number(send_food.text);
+                var wood = Number(send_wood.text);
+                var stone = Number(send_stone.text);
+                var iron = Number(send_iron.text);
 
-                var back_food = number(backend.foodRes);
-                var back_wood = number(backend.woodRes);
-                var back_stone = number(backend.stoneRes);
-                var back_iron = number(backend.ironRes);
+                var back_food = Number(backend.foodRes);
+                var back_wood = Number(backend.woodRes);
+                var back_stone = Number(backend.stoneRes);
+                var back_iron = Number(backend.ironRes);
 
                 if (back_food < food || food < 0)
                 {

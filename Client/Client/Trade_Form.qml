@@ -411,7 +411,7 @@ Image{
                 MouseArea {
                     anchors.fill: send
                     onClicked: {
-                        tfp.check_resources();
+                        tfp.check_resources()
                         backend.sendTrade()
                         tfp.visible=false;
                         stone_sent.clear()

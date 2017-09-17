@@ -5,10 +5,7 @@ qint16 Game::idFromName(const QString &name)
 {
     foreach(Player* player, players)
     {
-        if(player->getUsername() == name)
-        {
-            return players.key(player);
-        }
+        return players.key(player);
     }
     return -1;
 }
@@ -104,15 +101,21 @@ void Game::endTurn()
     logConsole << "Turn now over!";
     turnTimer->stop();
     emit executeTrades();
-    qDeleteAll(pendingTrades);
-    pendingTrades.clear();
+    
+    foreach (Trade* trade, pendingTrades)
+    {
+        if(trade->isAccepted())
+            pendingTrades.removeAll(trade);
+    }
+    int i = 0;
     foreach(Player* player, players)
     {
         Resources takeFood;
-        takeFood.wood = 0;
-        takeFood.stone= 0;
-        takeFood.iron = 0;
-        takeFood.food = 100;
+        takeFood.wood = (i==0)?-100:100;
+        takeFood.stone= (i==3)?-100:100;
+        takeFood.iron = (i==1)?-100:100;
+        takeFood.food = (i==2)?-100:100;
+        ++i;
         player->takeResources(takeFood);
 
         player->checkState();

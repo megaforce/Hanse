@@ -72,7 +72,7 @@ auto BackEnd::tradeInfo(const QString &res) -> QString
 	} else if ("from" == res) {
 		ret = trades.at(currTrade)->getSender();
 	} else if ("stone_client_offer" == res) {
-		ret = trades.at(currTrade)->getAmountOffered().stone;
+		ret = QString::number(trades.at(currTrade)->getAmountOffered().stone);
 	} else if ("iron_client_offer" == res) {
 		ret = QString::number(trades.at(currTrade)->getAmountOffered().iron);
 	} else if ("wood_client_offer" == res) {

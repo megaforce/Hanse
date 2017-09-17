@@ -108,7 +108,11 @@ void Game::endTurn()
     foreach (Trade* trade, pendingTrades)
     {
         if(trade->isAccepted())
+        {
             pendingTrades.removeAll(trade);
+            disconnect(this, SIGNAL(executeTrades()), trade, SLOT(executeTrade()));
+            delete trade;
+        }
     }
     int i = 0;
     foreach(Player* player, players)

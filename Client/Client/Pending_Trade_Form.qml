@@ -22,17 +22,29 @@ import trade.backend 1.0
 
 Image{
     id: ptfq
-    height: parent.height /3.5
-    width: parent.width /2
+    height: parent.height /3
+    width: parent.width /1.5
     Rectangle{
         height: parent.height
         width: parent.width
-
+        TextField{
+            height: ptf.height/8.2
+            width: ptf.width
+            text : "YOU ARE TRADING WITH : "
+            id: from
+            enabled: true
+            color: "Green"
+            opacity: 1000
+            readOnly: true
+            anchors.bottom: parent.top
+            anchors.left: parent.left
+        }
         enabled: true
         color: "Black"
         Item {
             height: parent.height
-            width: parent.width
+            width: parent.width/1.5
+            anchors.right: parent.right
             id: ptf
             function clean() {
                 from.clear();
@@ -46,7 +58,7 @@ Image{
                 food_client_demand.clear();
             }
             function fetch() {
-                from.text = backend.tradeInfo("from");
+                from.text = "YOU ARE TRADING WITH : " + backend.tradeInfo("from") ;
                 stone_client_offer.text = backend.tradeInfo("stone_client_offer");
                 iron_client_offer.text = backend.tradeInfo("iron_client_offer");
                 wood_client_offer.text = backend.tradeInfo("wood_client_offer");
@@ -88,14 +100,15 @@ Image{
             TextField{
                 height: ptf.height /8.2
                 width: ptf.width /4.3
-                id: from
+                id: blank
                 anchors.leftMargin: 10
                 anchors.topMargin: 10
                 anchors.rightMargin: 10
                 anchors.bottomMargin: 10
                 enabled: true
-                anchors.left: parent.left
-                anchors.top: parent.top
+                visible: false
+                anchors.right: acctual.left
+                anchors.top: ptf.top
                 color: "Green"
                 opacity: 1000
                 readOnly: true
@@ -107,9 +120,11 @@ Image{
                 width: ptf.width /4.3
                 enabled: true
                 text: "Stone"
-                anchors.topMargin: 10
-                anchors.right: from.right
-                anchors.top: from.bottom
+                anchors.rightMargin:10
+                anchors.leftMargin: 10
+                anchors.topMargin: 10                
+                anchors.right: blank.right
+                anchors.top: blank.bottom
                 color: "Green"
                 opacity: 1000
                 readOnly: true
@@ -122,8 +137,10 @@ Image{
                 text: "Iron"
                 enabled: true
                 anchors.top: stone.bottom
-                anchors.margins: 10
-                anchors.left: parent.left
+                anchors.topMargin: 10
+                anchors.rightMargin:10
+                anchors.leftMargin: 10
+                anchors.right: blank.right
                 color: "Green"
                 opacity: 1000
                 readOnly: true
@@ -136,8 +153,10 @@ Image{
                 text: "Wood"
                 enabled: true
                 anchors.top: iron.bottom
-                anchors.margins: 10
-                anchors.left: parent.left
+                anchors.topMargin: 10
+                anchors.rightMargin:10
+                anchors.leftMargin: 10
+                anchors.right: blank.right
                 color: "Green"
                 opacity: 1000
                 readOnly: true
@@ -150,8 +169,10 @@ Image{
                 text: "Food"
                 enabled: true
                 anchors.top: wood.bottom
-                anchors.margins: 10
-                anchors.left: parent.left
+                anchors.topMargin: 10
+                anchors.rightMargin:10
+                anchors.leftMargin: 10
+                anchors.right: blank.right
                 color: "Green"
                 opacity: 1000
                 readOnly: true
@@ -162,10 +183,12 @@ Image{
                 width: ptf.width /4.3
                 text: "Player offer"
                 enabled: true
-                anchors.left: from.right
-                anchors.top: from.top
+                anchors.right: player_demand.left
+                anchors.top: ptf.top
                 anchors.margins: 10
-                anchors.topMargin: 0
+                anchors.topMargin: 10
+                anchors.leftMargin: 0
+                anchors.rightMargin: 10
                 color: "Green"
                 opacity: 1000
                 readOnly: true
@@ -176,10 +199,12 @@ Image{
                 width: ptf.width /4.3
                 text: ""
                 enabled: true
-                anchors.left: stone.right
-                anchors.top: stone.top
+                anchors.left: player_offer.left
+                anchors.top: player_offer.bottom
                 anchors.margins: 10
-                anchors.topMargin: 0
+                anchors.leftMargin: 0
+                anchors.topMargin: 10
+                anchors.rightMargin: 20
                 color: "Green"
                 opacity: 1000
                 readOnly: true
@@ -190,9 +215,11 @@ Image{
                 width: ptf.width /4.3
                 text: ""
                 enabled: true
-                anchors.left: iron.right
+                anchors.left: player_offer.left
                 anchors.top: stone_client_offer.bottom
                 anchors.margins: 10
+                anchors.leftMargin: 0
+                anchors.rightMargin: 20
                 color: "Green"
                 opacity: 1000
                 readOnly: true
@@ -203,9 +230,11 @@ Image{
                 width: ptf.width /4.3
                 text: ""
                 enabled: true
-                anchors.left: wood.right
+                anchors.left: player_offer.left
                 anchors.top: iron_client_offer.bottom
                 anchors.margins: 10
+                anchors.leftMargin: 0
+                anchors.rightMargin: 20
                 color: "Green"
                 opacity: 1000
                 readOnly: true
@@ -216,9 +245,11 @@ Image{
                 width: ptf.width /4.3
                 text: ""
                 enabled: true
-                anchors.left: food.right
+                anchors.left: player_offer.left
                 anchors.top: wood_client_offer.bottom
                 anchors.margins: 10
+                anchors.leftMargin: 0
+                anchors.rightMargin: 20
                 color: "Green"
                 opacity: 1000
                 readOnly: true
@@ -229,10 +260,12 @@ Image{
                 width: ptf.width /4.3
                 text: "Player demand"
                 enabled: true
-                anchors.left: player_offer.right
-                anchors.top: player_offer.top
+                anchors.right: blank.left
+                anchors.top: ptf.top
                 anchors.margins: 10
-                anchors.topMargin: 0
+                anchors.topMargin: 10
+                anchors.rightMargin: 20
+                anchors.leftMargin: 0
                 color: "Green"
                 opacity: 1000
                 readOnly: true
@@ -243,11 +276,11 @@ Image{
                 width: ptf.width /4.3
                 text: ""
                 enabled: true
-                anchors.left: stone_client_offer.right
-                anchors.top: stone_client_offer.top
+                anchors.left: player_demand.left
+                anchors.top: player_demand.bottom
                 anchors.margins: 10
-                anchors.topMargin: 0
-                color: "Green"
+                anchors.leftMargin: 0
+                                color: "Green"
                 opacity: 1000
                 readOnly: true
             }
@@ -257,9 +290,10 @@ Image{
                 width: ptf.width /4.3
                 text: ""
                 enabled: true
-                anchors.left: iron_client_offer.right
+               anchors.left: player_demand.left
                 anchors.top: stone_client_demand.bottom
                 anchors.margins: 10
+                anchors.leftMargin: 0
                 color: "Green"
                 opacity: 1000
                 readOnly: true
@@ -270,9 +304,10 @@ Image{
                 width: ptf.width /4.3
                 text: ""
                 enabled: true
-                anchors.left: wood_client_offer.right
+               anchors.left: player_demand.left
                 anchors.top: iron_client_demand.bottom
                 anchors.margins: 10
+                anchors.leftMargin: 0
                 color: "Green"
                 opacity: 1000
                 readOnly: true
@@ -283,9 +318,10 @@ Image{
                 width: ptf.width /4.3
                 text: ""
                 enabled: true
-                anchors.left: food_client_offer.right
+               anchors.left: player_demand.left
                 anchors.top: wood_client_demand.bottom
                 anchors.margins: 10
+                anchors.leftMargin: 0
                 color: "Green"
                 opacity: 1000
                 readOnly: true
@@ -298,9 +334,10 @@ Image{
                 enabled: true
                 text: "Actual resources"
                 anchors.margins: 10
-                anchors.topMargin: 0
-                anchors.left: player_demand.right
-                anchors.top: player_demand.top
+                anchors.topMargin: 10
+                anchors.right: ptf.right
+                anchors.leftMargin: 10
+                anchors.top: ptf.top
                 color: "Green"
                 opacity: 1000
                 readOnly: true
@@ -403,8 +440,9 @@ Image{
                 height: ptf.height /8.2
                 width: ptf.width /4.3
                 text: "DECLINE"
-                anchors.left: food_client_demand.left
-                anchors.top: food_client_demand.bottom
+                anchors.left: food.left
+                anchors.top: food.bottom
+
                 anchors.margins: 10
                 anchors.leftMargin: 0
                 //anchors.topMargin: 0
@@ -423,8 +461,8 @@ Image{
                 height: ptf.height /8.2
                 width: ptf.width /4.3
                 text: "PREVIOUS TRADE"
-                anchors.left: food.left
-                anchors.top: food.bottom
+                anchors.left: food_client_demand.left
+                anchors.top: food_client_demand.bottom
                 anchors.margins: 10
                 anchors.leftMargin: 0
                 anchors.rightMargin: 0
@@ -455,5 +493,96 @@ Image{
                 }
             }
         }
-    }
-}
+
+    }Item{
+        id: rf
+        height: parent.height/1.4
+        width: parent.width/3.5
+        anchors.top: parent.top
+        anchors.left: parent.left
+        anchors.topMargin: 10
+        anchors.leftMargin: 10
+                    TextField{
+                     id: yr
+                     readOnly: true
+                     height: rf.height /4
+                     width: rf.width /1
+                     text: "Your resources"
+                     anchors.top: parent.top
+                     anchors.left: parent.left
+                    }
+                    TextField{
+                        readOnly: true
+                        id: food_rf
+                        height: rf.height /4
+                        width: rf.width /2
+                        text: "FOOD:"
+                        anchors.top: yr.bottom
+                        anchors.left: yr.left
+                    }
+                    TextField{
+                        readOnly: true
+                        id: wood_rf
+                        height: rf.height /4
+                        width: rf.width /2
+                        text: "WOOD:"
+                        anchors.top: food_rf.bottom
+                        anchors.left: parent.left
+                    }
+                    TextField{
+                        readOnly: true
+                        id: stone_rf
+                        height: rf.height /4
+                        width: rf.width /2
+                        text: "STONE:"
+                        anchors.top: wood_rf.bottom
+                        anchors.left: parent.left
+                    }
+                    TextField{
+                        readOnly: true
+                        id: iron_rf
+                        height: rf.height /4
+                        width: rf.width /2
+                        text: "IRON:"
+                        anchors.top: stone_rf.bottom
+                        anchors.left: parent.left
+                    }
+                    TextField{
+                        readOnly: true
+                        id: food_ammount
+                        height: rf.height /4
+                        width: rf.width /2
+                        text: backend.foodRes
+                        anchors.top: food_rf.top
+                        anchors.left: food_rf.right
+                    }
+                    TextField{
+                        readOnly: true
+                        id: wood_ammount
+                        height: rf.height /4
+                        width: rf.width /2
+                        text: backend.woodRes
+                        anchors.top: food_ammount.bottom
+                        anchors.left: food_ammount.left
+                    }
+                    TextField{
+                        readOnly: true
+                        id: stone_ammount
+                        height: rf.height /4
+                        width: rf.width /2
+                        text: backend.stoneRes
+                        anchors.top: wood_ammount.bottom
+                        anchors.left: wood_ammount.left
+                    }
+                    TextField{
+                        readOnly: true
+                        id: iron_ammount
+                        height: rf.height /4
+                        width: rf.width /2
+                        text: backend.ironRes
+                        anchors.top: stone_ammount.bottom
+                        anchors.left: stone_ammount.left
+                 }   }
+                }
+
+

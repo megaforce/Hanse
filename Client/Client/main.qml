@@ -171,6 +171,7 @@ Window {
             height: main_map.height / 4;
             Boat{
                 id: boat_1;
+                visible: false
                 anchors.right: island_1.right;
                 anchors.top: island_1.bottom;
             }
@@ -200,7 +201,7 @@ Window {
                     MouseArea {
                         anchors.fill: trade_button_1;
                         onClicked: {
-                            boat_1.visible = true;
+
                             trade_form.visible = true;
                             trade_form.enabled = true;
                             trade_menu_1.visible = false;
@@ -245,6 +246,7 @@ Window {
             height: main_map.height / 4;
             Boat{
                 id: boat_2;
+                visible: false
                 anchors.left: parent.left;
                 anchors.top: island_2.bottom;
             }
@@ -273,7 +275,7 @@ Window {
                         MouseArea {
                             anchors.fill: trade_button_2;
                             onClicked: {
-                                boat_2.visible = true;
+
                                 trade_form.visible = true;
                                 trade_form.enabled = true;
                                 trade_menu_2.visible = false;
@@ -319,6 +321,7 @@ Window {
             width: main_map.width / 5;
             height: main_map.height / 4;
             Boat{
+                visible: false
                 id: boat_3;
                 anchors.left: parent.left;
                 anchors.bottom: parent.top;
@@ -348,7 +351,7 @@ Window {
                         MouseArea {
                             anchors.fill: trade_button_3;
                             onClicked: {
-                                boat_3.visible = true;
+
                                 trade_form.visible = true;
                                 trade_form.enabled = true;
                                 trade_menu_3.visible = false;
@@ -392,6 +395,7 @@ Window {
             width: main_map.width / 5;
             height: main_map.height / 4;
             Boat{
+                visible: false
                 id: boat_4;
                 anchors.right: parent.right;
                 anchors.bottom: parent.top;
@@ -422,7 +426,7 @@ Window {
                         MouseArea {
                             anchors.fill: trade_button_4;
                             onClicked: {
-                                boat_4.visible = true;
+
                                 trade_form.visible = true;
                                 trade_form.enabled = true;
                                 trade_menu_4.visible = false;

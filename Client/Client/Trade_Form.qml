@@ -18,7 +18,7 @@ Image{
     id:tfp
     anchors.centerIn: parent
     height: parent.height /3.5
-    width: parent.width /1.5
+    width: parent.width /1.2
     function check_resources(){
         var food = Number(food_resource.text);
         var wood = Number(wood_resource.text);
@@ -438,7 +438,7 @@ Image{
 Item{
     id: rf
     height: parent.height/1.4
-    width: parent.width/4
+    width: parent.width/3.5
     anchors.top: parent.top
     anchors.left: parent.left
     anchors.topMargin: 10

@@ -42,9 +42,10 @@ Window {
        display_pt.visible = true;
 
     }
-    function display_ptfb()
+    function winner()
     {
-       end_game_text.text =  "" + backend.tradeInfo("from") + " HAS WON! CONGRATULATIONS";
+       end_game_text.text = backend.tradeInfo("from") + " HAS WON! CONGRATULATIONS";
+        endgame.visible = true;
     }
 
     width: 1440;
@@ -52,8 +53,11 @@ Window {
     visible: true;
     Map{
     End_Game{
+        visible: false
+        id:endgame
     TextField{
     id: end_game_text
+
     text:" HAS WON! CONGRATULATIONS"
     }
     }

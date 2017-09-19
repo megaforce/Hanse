@@ -22,8 +22,10 @@ class Game : public QObject
     unterpreter_t *interpret;
     qint16 idFromName(const QString &name);
     void sendStateData();
+    void sendGameOver();
     void startGame();
     QTimer *turnTimer;
+    bool isGameOver;
 public:
     explicit Game(QObject *parent = nullptr);
     ~Game();

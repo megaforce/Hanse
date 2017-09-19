@@ -39,8 +39,28 @@ void Game::sendStateData()
     }
 }
 
+void Game::sendGameOver()
+{
+    QJsonArray playerList;
+    QJsonArray scoreList;
+    foreach(Player *player, players)
+    {
+        scoreList.append(player->getInventory().wood + player->getInventory().stone + player->getInventory().iron + player->getInventory().food);
+        playerList.append(player->getUsername());
+    }
+    QJsonObject gameOverData;
+    gameOverData["type"] = static_cast<int>(codes_t::GAME_OVER);
+    gameOverData["player_list"] = playerList;
+    gameOverData["score_list"] = scoreList;
+
+    QJsonDocument doc(gameOverData);
+    foreach(Player *player, players)
+        emit sendData(player, doc.toBinaryData());
+}
+
 void Game::startGame()
 {
+    isGameOver = false;
     startTurn();
 }
 
@@ -85,6 +105,7 @@ void Game::begin()
 void Game::addPlayer(qint16 playerID)
 {
     players.insert(playerID, new Player());
+    connect(players[playerID], &Player::playerLost, [this](){ isGameOver = true; });
 }
 // add player and set his username
 void Game::playerIntroduction(qint16 playerID, QString username)
@@ -132,7 +153,9 @@ void Game::endTurn()
         doc.setObject(endOfTurn);
         emit sendData(player, doc.toBinaryData());
     }
-    startTurn();
+    if(!isGameOver)
+        startTurn();
+    else turnTimer->stop();
 }
 
 void Game::startTurn()

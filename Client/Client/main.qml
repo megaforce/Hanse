@@ -39,12 +39,12 @@ Window {
     }
     function display_ptfb()
     {
-       display_pt.visible = true;
+        display_pt.visible = true;
 
     }
     function winner(player_w)
     {
-       end_game_text.text = player_w + " HAS WON! CONGRATULATIONS";
+        end_game_text.text = player_w + " HAS WON! CONGRATULATIONS";
         endgame.visible = true;
     }
 
@@ -52,15 +52,15 @@ Window {
     height: 900;
     visible: true;
     Map{
-    End_Game{
-        visible: false
-        id:endgame
-    TextField{
-    id: end_game_text
+        End_Game{
+            visible: false
+            id:endgame
+            TextField{
+                id: end_game_text
 
-    text:" HAS WON! CONGRATULATIONS"
-    }
-    }
+                text:" HAS WON! CONGRATULATIONS"
+            }
+        }
     }
     Map{
 

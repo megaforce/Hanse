@@ -24,6 +24,7 @@ BackEnd::BackEnd(QObject *parent) :
 	connect(serverConnection, SIGNAL(dataRecieved(QByteArray)), this, SLOT(setState(QByteArray)));
 	connect(serverConnection, SIGNAL(dataRecieved(QByteArray)), this, SLOT(recieveTradeOffer(QByteArray)));
 	connect(serverConnection, SIGNAL(dataRecieved(QByteArray)), this, SLOT(endOfTurn(QByteArray)));
+	connect(serverConnection, SIGNAL(dataRecieved(QByteArray)), this, SLOT(endOfGame(QByteArray)));
 
 	connect(this, SIGNAL(startConnection(QString, QString)), serverConnection, SLOT(startConnection(QString,QString)));
 	serverConnection->moveToThread(serverThread);
@@ -72,7 +73,7 @@ auto BackEnd::tradeInfo(const QString &res) -> QString
 	} else if ("from" == res) {
 		ret = trades.at(currTrade)->getSender();
 	} else if ("stone_client_offer" == res) {
-		ret = trades.at(currTrade)->getAmountOffered().stone;
+		ret = QString::number(trades.at(currTrade)->getAmountOffered().stone);
 	} else if ("iron_client_offer" == res) {
 		ret = QString::number(trades.at(currTrade)->getAmountOffered().iron);
 	} else if ("wood_client_offer" == res) {
@@ -168,7 +169,7 @@ auto BackEnd::recieveTradeOffer(const QByteArray &data) -> void
 
 	Trade *newTrade = new Trade(tradeID, sender, amountOffered, amountRequested, this);
 	trades.prepend(newTrade);
-	// TODO: display trade offer
+	QMetaObject::invokeMethod(pqmain, "display_ptfb");
 }
 
 auto BackEnd::endOfTurn(const QByteArray &data) -> void
@@ -182,6 +183,30 @@ auto BackEnd::endOfTurn(const QByteArray &data) -> void
 	if(static_cast<codes_t>(stateData["type"].toInt()) != codes_t::TURN_END) return;
 	isTurnActive = false;
 	qDebug() << "endOfTurn";
+}
+
+void BackEnd::endOfGame(const QByteArray &data)
+{
+	// converts data back to json
+	QJsonDocument stateDataDocument = QJsonDocument::fromBinaryData(data);
+	QJsonObject stateData = stateDataDocument.object();
+
+	// returns if data is not meant for state
+	if(static_cast<codes_t>(stateData["type"].toInt()) != codes_t::GAME_OVER) return;
+
+	QJsonArray playerArray = stateData["player_list"].toArray();
+	QJsonArray scoreArray = stateData["score_list"].toArray();
+
+	QVariant pl = "";
+	for (int i = 0, m = 0; i < scoreArray.size(); ++i) {
+		if (scoreArray.at(i).toInt() > m) {
+			m = scoreArray.at(i).toInt();
+			pl = playerArray.at(i).toVariant();
+		}
+	}
+
+	QMetaObject::invokeMethod(pqmain, "winner",
+	                          Q_ARG(QVariant, pl));
 }
 
 

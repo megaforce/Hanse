@@ -42,9 +42,9 @@ Window {
        display_pt.visible = true;
 
     }
-    function winner()
+    function winner(player_w)
     {
-       end_game_text.text = backend.tradeInfo("from") + " HAS WON! CONGRATULATIONS";
+       end_game_text.text = player_w + " HAS WON! CONGRATULATIONS";
         endgame.visible = true;
     }
 

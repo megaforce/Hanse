@@ -427,7 +427,7 @@ Image{
                 MouseArea {
                     anchors.fill: parent
                     onClicked:{
-//                        ptfq.visible = false;
+                        ptfq.visible = false;
                         ptf.check_resources();
                         backend.acceptTrade(send_wood.text, send_stone.text, send_iron.text, send_food.text);
                         ptf.clean();
@@ -449,7 +449,7 @@ Image{
                 MouseArea {
                     anchors.fill: parent
                     onClicked:{
-//                        ptfq.visible = false;
+                        ptfq.visible = false;
                         backend.denyTrade();
                         ptf.clean();
                         ptf.fetch();

@@ -45,15 +45,20 @@ Window {
     {
         end_game_text.text = player_w + " HAS WON! CONGRATULATIONS";
         endgame.visible = true;
+        main_map.visible=false;
     }
 
     width: 1440;
     height: 900;
     visible: true;
     Map{
+        id:endgame
+        width: parent.width;
+        source: "/File/image/background.png";
+        height: parent.height;
         End_Game{
             visible: false
-            id:endgame
+
             TextField{
                 id: end_game_text
                 text: " HAS WON! CONGRATULATIONS"

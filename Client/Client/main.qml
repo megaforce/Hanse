@@ -39,12 +39,12 @@ Window {
     }
     function display_ptfb()
     {
-       display_pt.visible = true;
+        display_pt.visible = true;
 
     }
     function winner()
     {
-       end_game_text.text = backend.tradeInfo("from") + " HAS WON! CONGRATULATIONS";
+        end_game_text.text = backend.tradeInfo("from") + " HAS WON! CONGRATULATIONS";
         endgame.visible = true;
     }
 

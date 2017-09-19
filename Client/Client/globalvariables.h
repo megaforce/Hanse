@@ -9,7 +9,8 @@ enum class codes_t{
 	TURN_END        = 3,
 	SET_USERNAME    = 4,
 	TRADE_OFFER     = 5,
-	STATE_DATA      = 6
+	STATE_DATA      = 6,
+	GAME_OVER	= 7
 };
 
 #endif // GLOBALVARIABLES_H

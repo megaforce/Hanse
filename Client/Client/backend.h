@@ -67,6 +67,7 @@ private slots:
 	void setState(const QByteArray &data);
 	void recieveTradeOffer(const QByteArray &data);
 	void endOfTurn(const QByteArray &data);
+	void endOfGame(const QByteArray &data);
 	void cleanup(){
 		serverThread->exit();
 	}

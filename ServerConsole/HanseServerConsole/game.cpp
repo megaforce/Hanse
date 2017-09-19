@@ -155,7 +155,8 @@ void Game::endTurn()
     }
     if(!isGameOver)
         startTurn();
-    else turnTimer->stop();
+    else
+        sendGameOver();
 }
 
 void Game::startTurn()

@@ -37,6 +37,11 @@ Window {
         player_3_name.text = backend.getPlayer(2);
         player_4_name.text = backend.getPlayer(3);
     }
+    function display_ptfb()
+    {
+       display_pt.visible = true;
+
+    }
 
     width: 1440;
     height: 900;
@@ -103,12 +108,26 @@ Window {
             }
         }
     }
+
     Map{
         visible: false;
         id: main_map;
         width: parent.width;
         height: parent.height;
         source: "/File/image/Sea.png";
+        Button{
+        id: display_pt
+        visible: false;
+        anchors.centerIn: parent;
+        text: "NEW TRADE"
+        MouseArea{
+            anchors.fill: parent;
+            onClicked: {
+                pending_trade_form.visible = true
+                display_pt.visible = false
+            }
+        }
+        }
         Round_Timer{
             id: turns;
             fillMode: Image.PreserveAspectFit;

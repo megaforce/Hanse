@@ -194,10 +194,8 @@ void BackEnd::endOfGame(const QByteArray &data)
 	// returns if data is not meant for state
 	if(static_cast<codes_t>(stateData["type"].toInt()) != codes_t::GAME_OVER) return;
 
-
 	QJsonArray playerArray = stateData["player_list"].toArray();
 	QJsonArray scoreArray = stateData["score_list"].toArray();
-
 
 	QVariant pl = "";
 	for (int i = 0, m = 0; i < scoreArray.size(); ++i) {
@@ -206,8 +204,6 @@ void BackEnd::endOfGame(const QByteArray &data)
 			pl = playerArray.at(i).toVariant();
 		}
 	}
-
-
 
 	QMetaObject::invokeMethod(pqmain, "winner",
 	                          Q_ARG(QVariant, pl));

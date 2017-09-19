@@ -40,7 +40,6 @@ Window {
     function display_ptfb()
     {
         display_pt.visible = true;
-
     }
     function winner(player_w)
     {
@@ -63,9 +62,13 @@ Window {
 
             TextField{
                 id: end_game_text
+
                 visible: true
                 anchors.centerIn: parent
                 text:" HAS WON! CONGRATULATIONS"
+
+                text: " HAS WON! CONGRATULATIONS"
+
             }
         }
     }

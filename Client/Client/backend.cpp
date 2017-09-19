@@ -204,6 +204,7 @@ void BackEnd::endOfGame(const QByteArray &data)
 			pl = playerArray.at(i).toVariant();
 		}
 	}
+	qDebug() << "game over with winner: "+pl.toString();
 
 	QMetaObject::invokeMethod(pqmain, "winner",
 	                          Q_ARG(QVariant, pl));

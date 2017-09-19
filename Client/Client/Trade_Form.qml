@@ -435,6 +435,25 @@ Image{
                     }
                 }
             }
+            Button{
+                id: close
+                height: tfp.height /8.2
+                width: tfp.width /4.3
+                text: "CLOSE"
+                anchors.left: send.right
+                anchors.top: send.top
+                anchors.margins: 10
+                anchors.leftMargin: 10
+                anchors.rightMargin: 0
+                anchors.topMargin: 0
+                anchors.bottomMargin: 0
+                MouseArea {
+                    anchors.fill: close;
+                    onClicked: {
+                        tfp.visible = false
+                    }
+                }
+            }
 Item{
     id: rf
     height: parent.height/1.4

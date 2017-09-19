@@ -492,6 +492,24 @@ Image{
                     }
                 }
             }
+            Button{
+                id: close
+                height: ptf.height /8.2
+                width: ptf.width /4.3
+                text: "CLOSE"
+                anchors.right: client_trade.right
+                anchors.top: client_trade.bottom
+                anchors.margins: 10
+                anchors.leftMargin: 0
+                anchors.rightMargin: 0
+                anchors.topMargin: 10
+                MouseArea {
+                    anchors.fill: close;
+                    onClicked: {
+                        ptfq.visible = false
+                    }
+                }
+            }
         }
 
     }Item{

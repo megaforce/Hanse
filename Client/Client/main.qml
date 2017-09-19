@@ -212,7 +212,7 @@ Window {
             }
             Trade_Menu{
                 id: trade_menu_1;
-                anchors.left: parent.right;
+                anchors.centerIn: island_1
                 Button{
                     id: trade_button_1;
                     text: "TRADE";
@@ -230,8 +230,8 @@ Window {
                 }
 
                 Button{
-                    anchors.top: pending_trade_button_1.bottom;
-                    anchors.left: pending_trade_button_1.left;
+                    anchors.top: trade_button_1.bottom;
+                    anchors.left:trade_button_1.left;
                     id: cancel_button_1;
                     text: "CANCEL";
                     MouseArea {
@@ -244,7 +244,7 @@ Window {
                         }
                     }
                 }
-                Button{
+                /*Button{
                     anchors.top: trade_button_1.bottom;
                     anchors.left: trade_button_1.left;
                     id: pending_trade_button_1;
@@ -255,7 +255,7 @@ Window {
                             pending_trade_form.visible = true
                         }
                     }
-                }
+                }*/
             }
         }
         Island{
@@ -286,7 +286,7 @@ Window {
                 }
                 Trade_Menu{
                     id: trade_menu_2;
-                    anchors.left: parent.right;
+                    anchors.centerIn: parent
                     Button{
                         id: trade_button_2;
                         text: "TRADE";
@@ -303,8 +303,8 @@ Window {
                         }
                     }
                     Button{
-                        anchors.top: pending_trade_button_2.bottom;
-                        anchors.left: pending_trade_button_2.left;
+                        anchors.top: trade_button_2.bottom;
+                        anchors.left: trade_button_2.left;
                         id: cancel_button_2;
                         text: "CANCEL";
                         MouseArea {
@@ -319,7 +319,7 @@ Window {
 
 
                     }
-                    Button{
+                 /*   Button{
                         anchors.top: trade_button_2.bottom;
                         anchors.left: trade_button_2.left;
                         id: pending_trade_button_2;
@@ -330,7 +330,7 @@ Window {
                                 pending_trade_form.visible = true
                             }
                         }
-                    }
+                    }*/
                 }
             }
         }
@@ -362,7 +362,7 @@ Window {
                 }
                 Trade_Menu{
                     id: trade_menu_3;
-                    anchors.left: parent.right;
+                    anchors.centerIn: parent
                     Button{
                         id: trade_button_3;
                         text: "TRADE";
@@ -379,8 +379,8 @@ Window {
                         }
                     }
                     Button{
-                        anchors.top: pending_trade_button_3.bottom;
-                        anchors.left: pending_trade_button_3.left;
+                        anchors.top: trade_button_3.bottom;
+                        anchors.left: trade_button_3.left;
                         id: cancel_button_3;
                         text: "CANCEL";
                         MouseArea {
@@ -393,7 +393,7 @@ Window {
                             }
                         }
                     }
-                    Button{
+              /*    Button{
                         anchors.top: trade_button_3.bottom;
                         anchors.left: trade_button_3.left;
                         id: pending_trade_button_3;
@@ -404,7 +404,7 @@ Window {
                                 pending_trade_form.visible = true
                             }
                         }
-                    }
+                    }*/
                 }
             }
         }
@@ -436,7 +436,7 @@ Window {
                 }
                 Trade_Menu{
                     id: trade_menu_4;
-                    anchors.left: parent.right;
+                    anchors.centerIn: parent
 
                     Button{
                         id: trade_button_4;
@@ -454,8 +454,8 @@ Window {
                         }
                     }
                     Button{
-                        anchors.top: pending_trade_button_4.bottom;
-                        anchors.left: pending_trade_button_4.left;
+                        anchors.top: trade_button_4.bottom;
+                        anchors.left: trade_button_4.left;
                         id: cancel_button_4;
                         text: "CANCEL";
                         MouseArea {
@@ -469,7 +469,7 @@ Window {
                         }
 
                     }
-                    Button{
+                 /*   Button{
                         anchors.top: trade_button_4.bottom;
                         anchors.left: trade_button_4.left;
                         id: pending_trade_button_4;
@@ -480,7 +480,7 @@ Window {
                                 pending_trade_form.visible = true
                             }
                         }
-                    }
+                    }*/
                 }
             }
         }

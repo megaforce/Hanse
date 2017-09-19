@@ -57,12 +57,14 @@ Window {
         width: parent.width;
         source: "/File/image/background.png";
         height: parent.height;
+        visible: false
         End_Game{
-            visible: false
+                anchors.centerIn: parent
 
             TextField{
                 id: end_game_text
-
+                visible: true
+                anchors.centerIn: parent
                 text:" HAS WON! CONGRATULATIONS"
             }
         }

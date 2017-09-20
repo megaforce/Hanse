@@ -65,8 +65,6 @@ Window {
 
                 visible: true
                 anchors.centerIn: parent
-                text:" HAS WON! CONGRATULATIONS"
-
                 text: " HAS WON! CONGRATULATIONS"
 
             }

@@ -31,7 +31,7 @@ Image{
         TextField{
             height: ptf.height/8.2
             width: ptf.width
-            text : "YOU ARE TRADING WITH : "
+            text : "YOU ARE TRADING WITH: "
             id: from
             enabled: true
             color: "Green"

@@ -2,10 +2,10 @@
 
 Player::Player(QObject *parent) : QObject(parent)
 {
-    inventory.iron    = 1000;
-    inventory.stone   = 1000;
-    inventory.wood    = 1000;
-    inventory.food    = 1000;
+    inventory.iron    = 2000;
+    inventory.stone   = 2000;
+    inventory.wood    = 2000;
+    inventory.food    = 2000;
 }
 
 void Player::takeResources(Resources resources)

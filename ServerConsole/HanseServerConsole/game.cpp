@@ -70,7 +70,7 @@ Game::Game(QObject *parent) :
     server = nullptr;
     interpret = new unterpreter_t(this);
     turnTimer = new QTimer(this);
-    turnTimer->setInterval(20000);
+    turnTimer->setInterval(60000);
     connect(turnTimer, SIGNAL(timeout()), this, SLOT(endTurn()));
 }
 
@@ -139,10 +139,10 @@ void Game::endTurn()
     foreach(Player* player, players)
     {
         Resources takeFood;
-        takeFood.wood = (i==0)?-100:100;
-        takeFood.stone= (i==3)?-100:100;
-        takeFood.iron = (i==1)?-100:100;
-        takeFood.food = (i==2)?-100:100;
+        takeFood.wood = (i==0)?-100:200;
+        takeFood.stone= (i==3)?-100:200;
+        takeFood.iron = (i==1)?-100:200;
+        takeFood.food = (i==2)?-100:200;
         ++i;
         player->takeResources(takeFood);
 

@@ -66,7 +66,7 @@ Window {
         height: parent.height;
         visible: false
         End_Game{
-                anchors.centerIn: parent
+            anchors.centerIn: parent
 
             TextField{
                 id: end_game_text
@@ -189,7 +189,7 @@ Window {
                     anchors.bottomMargin: 10
                     readOnly: true
                     id:timer_text;
-                    text:"20"
+                    text:"60"
                 }
             }
         }

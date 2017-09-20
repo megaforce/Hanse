@@ -98,7 +98,7 @@ void MainWindow::playerIntroduction(qint16 playerID, QString username)
     addPlayer(playerID);
     players[playerID]->setUsername(username);
     qDebug() << "New player now fully added and introduced!";
-    if(players.size() >= 4)
+    if(players.size() >= 2) // TEMP changed from 4 to 2
     {
         server->close();
         startGame();

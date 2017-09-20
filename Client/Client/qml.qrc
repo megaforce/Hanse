@@ -1,0 +1,27 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Island.qml</file>
+        <file>Boat.qml</file>
+        <file>Trade_Menu.qml</file>
+        <file>Map.qml</file>
+        <file>Trade_Form.qml</file>
+        <file>Resource_Form.qml</file>
+        <file>Login_form.qml</file>
+        <file>Pending_Trade_Form.qml</file>
+        <file>Round_Timer.qml</file>
+        <file>End_Game.qml</file>
+    </qresource>
+    <qresource prefix="/File">
+        <file>image/ship.png</file>
+        <file>image/island.png</file>
+        <file>image/lineedit.png</file>
+        <file>image/lineedit.sci</file>
+        <file>image/island1.png</file>
+        <file>image/island2.png</file>
+        <file>image/island3.png</file>
+        <file>image/island4.png</file>
+        <file>image/background.png</file>
+        <file>image/Sea.png</file>
+    </qresource>
+</RCC>

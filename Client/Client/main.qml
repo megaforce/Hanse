@@ -34,7 +34,6 @@ Window {
         id: backend;
     }
 
-
     function refreshUserNames() {
         player_1_name.text = backend.getPlayer(0);
         player_2_name.text = backend.getPlayer(1);

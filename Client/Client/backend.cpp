@@ -1,5 +1,6 @@
 #include "backend.h"
 #include <QDebug>
+#include <QTimer>
 #include <QMetaObject>
 
 BackEnd::BackEnd(QObject *parent) :
@@ -12,6 +13,9 @@ BackEnd::BackEnd(QObject *parent) :
 	players.append("Waiting for all players to join");
 	players.append("Waiting for all players to join");
 	players.append("Waiting for all players to join");
+
+	timer = new QTimer();
+	connect(timer, SIGNAL(timeout()), this, SLOT(sec_passed()));
 
 	isTurnActive = false;
 	tradeData["type"] = static_cast<int>(codes_t::TRADE_REQUEST);
@@ -97,6 +101,9 @@ auto BackEnd::tradeInfo(const QString &res) -> QString
 
 auto BackEnd::getPlayer(const qint32 &pl) -> QString
 {
+	if (pl >= players.size()) {
+		return "";
+	}
 	return players.at(pl);
 }
 
@@ -140,6 +147,7 @@ auto BackEnd::setState(const QByteArray &data) -> void
 	emit stoneResChanged();
 	emit ironResChanged();
 	QMetaObject::invokeMethod(pqmain, "refreshUserNames");
+	timer->start(1000);
 }
 
 auto BackEnd::recieveTradeOffer(const QByteArray &data) -> void
@@ -178,7 +186,6 @@ auto BackEnd::recieveTradeOffer(const QByteArray &data) -> void
 
 auto BackEnd::endOfTurn(const QByteArray &data) -> void
 {
-
 	// converts data back to json
 	QJsonDocument stateDataDocument = QJsonDocument::fromBinaryData(data);
 	QJsonObject stateData = stateDataDocument.object();
@@ -186,6 +193,10 @@ auto BackEnd::endOfTurn(const QByteArray &data) -> void
 	// returns if data is not meant for state
 	if(static_cast<codes_t>(stateData["type"].toInt()) != codes_t::TURN_END) return;
 	isTurnActive = false;
+
+	timer->stop();
+	QMetaObject::invokeMethod(pqmain, "reset_timer");
+
 	qDebug() << "endOfTurn";
 }
 
@@ -212,6 +223,11 @@ void BackEnd::endOfGame(const QByteArray &data)
 
 	QMetaObject::invokeMethod(pqmain, "winner",
 	                          Q_ARG(QVariant, pl));
+}
+
+void BackEnd::sec_passed()
+{
+	QMetaObject::invokeMethod(pqmain, "timer_inc");
 }
 
 

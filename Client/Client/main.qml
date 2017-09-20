@@ -47,6 +47,14 @@ Window {
         endgame.visible = true;
         main_map.visible=false;
     }
+    function timer_inc()
+    {
+        timer_text.text = (Number(timer_text.text) + 59) % 60;
+    }
+    function reset_timer()
+    {
+        timer_text.text = '60';
+    }
 
     width: 1440;
     height: 900;
@@ -144,17 +152,17 @@ Window {
         height: parent.height;
         source: "/File/image/Sea.png";
         Button{
-        id: display_pt
-        visible: false;
-        anchors.centerIn: parent;
-        text: "NEW TRADE"
-        MouseArea{
-            anchors.fill: parent;
-            onClicked: {
-                pending_trade_form.visible = true
-                display_pt.visible = false
+            id: display_pt
+            visible: false;
+            anchors.centerIn: parent;
+            text: "NEW TRADE"
+            MouseArea{
+                anchors.fill: parent;
+                onClicked: {
+                    pending_trade_form.visible = true
+                    display_pt.visible = false
+                }
             }
-        }
         }
         Round_Timer{
             id: turns;

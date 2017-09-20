@@ -25,6 +25,10 @@ import trade.backend 1.0
 
 
 Window {
+    // flags: Qt.FramelessWindowHint
+    height: 900;
+    width: 1920;
+    visible: true;
     id: root;
     BackEnd {
         id: backend;
@@ -56,9 +60,7 @@ Window {
         timer_text.text = '60';
     }
 
-    width: 1440;
-    height: 900;
-    visible: true;
+
     Map{
         id:endgame
         width: parent.width;
@@ -73,7 +75,11 @@ Window {
 
                 visible: true
                 anchors.centerIn: parent
-                text: " HAS WON! CONGRATULATIONS"
+
+                text:" HAS WON! CONGRATULATIONS"
+
+                
+
 
             }
         }
@@ -351,7 +357,7 @@ Window {
 
 
                     }
-                 /*   Button{
+                    /*   Button{
                         anchors.top: trade_button_2.bottom;
                         anchors.left: trade_button_2.left;
                         id: pending_trade_button_2;
@@ -425,7 +431,7 @@ Window {
                             }
                         }
                     }
-              /*    Button{
+                    /*    Button{
                         anchors.top: trade_button_3.bottom;
                         anchors.left: trade_button_3.left;
                         id: pending_trade_button_3;
@@ -501,7 +507,7 @@ Window {
                         }
 
                     }
-                 /*   Button{
+                    /*   Button{
                         anchors.top: trade_button_4.bottom;
                         anchors.left: trade_button_4.left;
                         id: pending_trade_button_4;

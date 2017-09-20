@@ -68,6 +68,7 @@ private slots:
 	void recieveTradeOffer(const QByteArray &data);
 	void endOfTurn(const QByteArray &data);
 	void endOfGame(const QByteArray &data);
+	void sec_passed();
 	void cleanup(){
 		serverThread->exit();
 	}
@@ -84,6 +85,8 @@ private:
 
 	QList<Trade *> trades;
 	qint16 currTrade;
+
+	QTimer *timer;
 };
 
 #endif // BACKEND_H

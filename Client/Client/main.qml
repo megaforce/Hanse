@@ -58,13 +58,16 @@ Window {
     {
         timer_text.text = '60';
     }
-    function append_th(ntxt)
-    {
-        var old_chat;
-        old_chat = trade_history_text.text;
-        var tmp = old_chat.concat(ntxt);
-        trade_history_text.text = tmp;
-    }
+    function new_entry(turn, body)
+        {
+            var old_chat;
+            old_chat = trade_history_text.text;
+            var tmp = old_chat.concat("["+turn+"; "+timer_text.text+"] ");
+            tmp = tmp.concat(body+"\n");
+    //        var tmp = old_chat.concat("body");
+            trade_history_text.text = tmp;
+            console.log(tmp);
+        }
 
     Map{
         id:endgame

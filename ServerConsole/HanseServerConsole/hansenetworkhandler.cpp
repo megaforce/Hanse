@@ -45,10 +45,6 @@ void HanseNetworkHandler::incomingConnection(qintptr socketDescriptor)
     //connect the client to the interpreter
 
     newClient->start();
-    qDebug() << "New clients thread is: " << newClient->thread();
-    qDebug() << "Main thread is: " << QThread::currentThread();
-
-
 }
 
 void HanseNetworkHandler::stopServer()

@@ -61,6 +61,7 @@ void Game::sendGameOver()
 void Game::startGame()
 {
     isGameOver = false;
+    logConsole << "Game starting!\n************************************************************";
     startTurn();
 }
 
@@ -77,7 +78,6 @@ Game::Game(QObject *parent) :
 Game::~Game()
 {
     players.clear();
-
 }
 
 void Game::begin()

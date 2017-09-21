@@ -12,6 +12,8 @@
 #include <QJsonDocument>
 #include <QTimer>
 #include <iostream>
+#include <QFile>
+#include <QDateTime>
 
 class Game : public QObject
 {
@@ -26,6 +28,7 @@ class Game : public QObject
     void startGame();
     QTimer *turnTimer;
     bool isGameOver;
+    QFile *logFile;
 public:
     explicit Game(QObject *parent = nullptr);
     ~Game();

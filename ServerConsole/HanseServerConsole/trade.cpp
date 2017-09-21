@@ -68,6 +68,27 @@ void Trade::checkAccept(qint16 tradeID, Resources amountAccepted)
 
 void Trade::executeTrade()
 {
+    QString message = "Trade from " + m_senderPlayer->getUsername() + " to " + m_recieverPlayer->getUsername() + " executed:\n";
+    message+="\tWood offered: " + QString::number(m_amountOffered.wood) + "\n";
+    message+="\tStone offered: " + QString::number(m_amountOffered.stone) + "\n";
+    message+="\tIron offered: " + QString::number(m_amountOffered.iron) + "\n";
+    message+="\tFood offered: " + QString::number(m_amountOffered.food) + "\n\n";
+
+    message+="\tWood requested: " + QString::number(m_amountRequested.wood) + "\n";
+    message+="\tStone requested: " + QString::number(m_amountRequested.stone) + "\n";
+    message+="\tIron requested: " + QString::number(m_amountRequested.iron) + "\n";
+    message+="\tFood requested: " + QString::number(m_amountRequested.food) + "\n\n";
+
+    message+="\tWood given: " + QString::number(m_amountGiven.wood) + "\n";
+    message+="\tStone given: " + QString::number(m_amountGiven.stone) + "\n";
+    message+="\tIron given: " + QString::number(m_amountGiven.iron) + "\n";
+    message+="\tFood given: " + QString::number(m_amountGiven.food) + "\n\n";
+
+    message+="\tWood accepted: " + QString::number(m_amountAccepted.wood) + "\n";
+    message+="\tStone accepted: " + QString::number(m_amountAccepted.stone) + "\n";
+    message+="\tIron accepted: " + QString::number(m_amountAccepted.iron) + "\n";
+    message+="\tFood accepted: " + QString::number(m_amountAccepted.food) + "\n";
+    logConsole << message;
     if(isAccepted())
     {
         m_senderPlayer->takeResources(m_amountGiven);

@@ -165,8 +165,10 @@ Window {
                 TextField{
                     text: "TRADE HISTORY"
                     readOnly: true
-                    width: main_map.width /8
-                    height: main_map.height /32
+                    width: parent.width
+                    height: parent.height/8
+                    anchors.bottom: parent.top
+                    anchors.left: parent.left
                 }
                 TextArea {
                     id: trade_history_text

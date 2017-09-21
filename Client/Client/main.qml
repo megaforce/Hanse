@@ -68,23 +68,15 @@ Window {
         visible: false
         End_Game{
             anchors.centerIn: parent
-
             TextField{
                 id: end_game_text
-
                 visible: true
                 anchors.centerIn: parent
-
                 text:" HAS WON! CONGRATULATIONS"
-
-                
-
-
             }
         }
     }
     Map{
-
         id: main_menu;
         width: parent.width;
         source: "/File/image/background.png";

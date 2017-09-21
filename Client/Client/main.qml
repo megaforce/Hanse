@@ -198,8 +198,8 @@ Window {
                 TextField{
                     text: "TRADE HISTORY"
                     readOnly: true
-                    width: parent.width
-                    height: parent.height/6.5
+                    width: main_map.width /8
+                    height: main_map.height /36
                     anchors.bottom: parent.top
                     anchors.left: parent.left
                 }

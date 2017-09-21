@@ -89,7 +89,7 @@ private:
 	QList<Trade *> trades;
 	qint16 currTrade;
 
-	Stats stat;
+	Stats *stat;
 
 	QTimer *timer;
 	qint8 turnCount;

@@ -13,8 +13,8 @@ import QtQuick.Dialogs 1.2
 Image{
     visible: true
 
-    height: parent.height / 10
-    width: parent.width /8
+    height: parent.height / 6
+    width: parent.width /6
     Item{
         id: rf
         height: parent.height

@@ -59,15 +59,16 @@ Window {
         timer_text.text = '60';
     }
     function new_entry(turn, body)
-    {
-        var old_chat;
-        old_chat = trade_history_text.text;
-        var tmp = old_chat.concat("["+turn+"; "+timer_text.text+"] ");
-        tmp = tmp.concat(body+"\n");
-//        var tmp = old_chat.concat("body");
-        trade_history_text.text = tmp;
-        console.log(tmp);
-    }
+
+        {
+            var old_chat;
+            old_chat = trade_history_text.text;
+            var tmp = old_chat.concat("["+turn+"; "+timer_text.text+"] ");
+            tmp = tmp.concat(body+"\n");
+    //        var tmp = old_chat.concat("body");
+            trade_history_text.text = tmp;
+            console.log(tmp);
+}
 
     Map{
         id:endgame
@@ -154,28 +155,34 @@ Window {
         height: parent.height;
         source: "/File/image/Sea.png";
         Rectangle{
+
             width: main_map.width /8
             height: main_map.height /4
             anchors.bottom: island_3.top
             anchors.right: main_map.right
             anchors.margins: 100
-            ScrollView {
-                id: view
-                anchors.fill: parent
-                TextField{
-                    text: "TRADE HISTORY"
-                    readOnly: true
-                    width: parent.width
-                    height: parent.height/8
-                    anchors.bottom: parent.top
-                    anchors.left: parent.left
-                }
-                TextArea {
-                    id: trade_history_text
-                    text: ""
-                    readOnly: true;
-                }
+
+            TextField{
+                text: "TRADE HISTORY"
+                readOnly: true
+                width: parent.width
+                height: parent.height/8
+                anchors.bottom: parent.top
+                anchors.left: parent.left
+
             }
+                ScrollView {
+                    id: view
+                    anchors.fill: parent
+
+                    TextArea {
+                        readOnly: true
+                        id: trade_history_text
+                        text: " "
+                    }
+                }
+
+
         }
         Button{
             id: display_pt

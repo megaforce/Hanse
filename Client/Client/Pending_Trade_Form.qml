@@ -21,7 +21,6 @@ import trade.backend 1.0
  ************************************************************************************************************************/
 
 Image{
-
     id: ptfq
     height: parent.height /3
     width: parent.width /1.5
@@ -31,7 +30,7 @@ Image{
         TextField{
             height: ptf.height/8.2
             width: ptf.width
-            text : "YOU ARE TRADING WITH : "
+            text: "YOU ARE TRADING WITH: "
             id: from
             enabled: true
             color: "Green"

@@ -120,8 +120,8 @@ auto BackEnd::getPlayer(const qint32 &pl) -> QString
 auto BackEnd::log(const QString &s) -> void
 {
 	QMetaObject::invokeMethod(pqmain, "new_entry",
-	                          Q_ARG(QVariant, 2),
-	                          Q_ARG(QVariant, QVariant(s)));
+	                          Q_ARG(QVariant, turnCount),
+	                          Q_ARG(QVariant, s));
 }
 
 auto BackEnd::startGame(const QString &uname) -> void
@@ -221,7 +221,7 @@ auto BackEnd::endOfTurn(const QByteArray &data) -> void
 	++turnCount;
 
 	qDebug() << "endOfTurn";
-	log("End of turn "+turnCount);
+	log("End of turn "+QString(turnCount));
 }
 
 void BackEnd::endOfGame(const QByteArray &data)

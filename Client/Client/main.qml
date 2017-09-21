@@ -155,7 +155,7 @@ Window {
         source: "/File/image/Sea.png";
         Rectangle{
             width: main_map.width /8
-            height: main_map.height /4
+            height: main_map.height /6.5
             anchors.bottom: main_map.bottom
             anchors.right: island_3.left
             anchors.margins: 100
@@ -167,7 +167,7 @@ Window {
                     text: "TRADE HISTORY"
                     readOnly: true
                     width: parent.width
-                    height: parent.height/8
+                    height: parent.height/6.5
                     anchors.bottom: parent.top
                     anchors.left: parent.left
                 }

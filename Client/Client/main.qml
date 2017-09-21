@@ -58,7 +58,13 @@ Window {
     {
         timer_text.text = '60';
     }
-
+    function append_th(ntxt)
+    {
+        var old_chat;
+        old_chat = trade_history_text.text;
+        var tmp = old_chat.concat(ntxt);
+        trade_history_text.text = tmp;
+    }
 
     Map{
         id:endgame

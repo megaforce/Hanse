@@ -156,9 +156,10 @@ Window {
         Rectangle{
             width: main_map.width /8
             height: main_map.height /4
-            anchors.bottom: island_3.top
-            anchors.right: main_map.right
+            anchors.bottom: main_map.bottom
+            anchors.right: island_3.left
             anchors.margins: 100
+            anchors.bottomMargin: 10
             ScrollView {
                 id: view
                 anchors.fill: parent

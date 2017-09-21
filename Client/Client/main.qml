@@ -193,17 +193,18 @@ Window {
             anchors.right: island_3.left
             anchors.margins: 100
             anchors.bottomMargin: 10
+            TextField{
+                text: "TRADE HISTORY"
+                readOnly: true
+                width: main_map.width /8
+                height: main_map.height /36
+                anchors.bottom: parent.top
+                anchors.left: parent.left
+            }
             ScrollView {
                 id: view
                 anchors.fill: parent
-                TextField{
-                    text: "TRADE HISTORY"
-                    readOnly: true
-                    width: main_map.width /8
-                    height: main_map.height /36
-                    anchors.bottom: parent.top
-                    anchors.left: parent.left
-                }
+
                 TextArea {
                     id: trade_history_text
                     text: ""

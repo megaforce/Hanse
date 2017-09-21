@@ -145,7 +145,7 @@ auto BackEnd::setState(const QByteArray &data) -> void
 	// returns if data is not meant for state
 	if(static_cast<codes_t>(stateData["type"].toInt()) != codes_t::STATE_DATA) return;
 
-	log("Starting turn " + QString::number(currTrade));
+	log("Starting turn " + QString::number(turnCount));
 
 	// retrieve inventory from data
 	inventory.wood = stateData["amountWood"].toInt();

@@ -54,6 +54,7 @@ auto BackEnd::setTradePartner(const qint32 &num) -> void
 auto BackEnd::sendTrade() -> void
 {
 	qDebug() << "sendTrade";
+	log("Starting trade with "+tradeData["toPlayer"].toString());
 	QJsonDocument doc;
 	doc.setObject(tradeData);
 	emit sendData(doc.toBinaryData());
@@ -112,8 +113,6 @@ auto BackEnd::getPlayer(const qint32 &pl) -> QString
 
 auto BackEnd::log(const QString &s) -> void
 {
-
-
 	QMetaObject::invokeMethod(pqmain, "new_entry",
 	                          Q_ARG(QVariant, 2),
 	                          Q_ARG(QVariant, QVariant(s)));
@@ -121,6 +120,7 @@ auto BackEnd::log(const QString &s) -> void
 
 auto BackEnd::startGame(const QString &uname) -> void
 {
+	log("Starting game with username "+uname);
 	username = uname;
 	connect(this, SIGNAL(sendData(QByteArray)), serverConnection, SLOT(sendData(QByteArray)));
 #ifndef LOCAL_SERVER
@@ -138,6 +138,8 @@ auto BackEnd::setState(const QByteArray &data) -> void
 
 	// returns if data is not meant for state
 	if(static_cast<codes_t>(stateData["type"].toInt()) != codes_t::STATE_DATA) return;
+
+	log("Starting turn "+currTrade);
 
 	// retrieve inventory from data
 	inventory.wood = stateData["amountWood"].toInt();
@@ -173,6 +175,7 @@ auto BackEnd::recieveTradeOffer(const QByteArray &data) -> void
 	if(static_cast<codes_t>(tradeData["type"].toInt()) != codes_t::TRADE_OFFER) return;
 
 	qDebug() << "Got a trade offer!";
+	log("Got a trade offer from "+tradeData["sender"].toString());
 	Resources amountOffered;
 	Resources amountRequested;
 	qint16    tradeID;
@@ -212,6 +215,7 @@ auto BackEnd::endOfTurn(const QByteArray &data) -> void
 	++turnCount;
 
 	qDebug() << "endOfTurn";
+	log("End of turn "+turnCount);
 }
 
 void BackEnd::endOfGame(const QByteArray &data)
@@ -234,6 +238,7 @@ void BackEnd::endOfGame(const QByteArray &data)
 		}
 	}
 	qDebug() << "game over with winner: "+pl.toString();
+	log(pl.toString() + "has won the game");
 
 	QMetaObject::invokeMethod(pqmain, "winner",
 	                          Q_ARG(QVariant, pl));
@@ -264,6 +269,7 @@ void BackEnd::acceptTrade(
 		{"ironAmount", iron.toInt()},
 		{"foodAmount", food.toInt()}
 	};
+	log("Accepted trade");
 	QJsonDocument doc;
 	doc.setObject(tradeDetails);
 	emit sendData(doc.toBinaryData());
@@ -284,6 +290,7 @@ void BackEnd::denyTrade()
 		{"type", static_cast<int>(codes_t::TRADE_DENY)},
 		{"tradeID", trades.at(currTrade)->getTradeID()},
 	};
+	log("Denied trade");
 	QJsonDocument doc;
 	doc.setObject(tradeDetails);
 	emit sendData(doc.toBinaryData());

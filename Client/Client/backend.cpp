@@ -60,6 +60,7 @@ auto BackEnd::sendTrade() -> void
 auto BackEnd::clearTrade() -> void
 {
 	qDebug() << "clearTrade";
+	log("Test");
 }
 
 auto BackEnd::tradeInfo(const QString &res) -> QString
@@ -105,6 +106,15 @@ auto BackEnd::getPlayer(const qint32 &pl) -> QString
 		return "";
 	}
 	return players.at(pl);
+}
+
+auto BackEnd::log(const QString &s) -> void
+{
+
+
+	QMetaObject::invokeMethod(pqmain, "new_entry",
+	                          Q_ARG(QVariant, 2),
+	                          Q_ARG(QVariant, QVariant(s)));
 }
 
 auto BackEnd::startGame(const QString &uname) -> void

@@ -59,6 +59,7 @@ Window {
         timer_text.text = '60';
     }
     function new_entry(turn, body)
+
         {
             var old_chat;
             old_chat = trade_history_text.text;
@@ -67,7 +68,7 @@ Window {
     //        var tmp = old_chat.concat("body");
             trade_history_text.text = tmp;
             console.log(tmp);
-        }
+}
 
     Map{
         id:endgame
@@ -77,23 +78,15 @@ Window {
         visible: false
         End_Game{
             anchors.centerIn: parent
-
             TextField{
                 id: end_game_text
-
                 visible: true
                 anchors.centerIn: parent
-
                 text:" HAS WON! CONGRATULATIONS"
-
-                
-
-
             }
         }
     }
     Map{
-
         id: main_menu;
         width: parent.width;
         source: "/File/image/background.png";
@@ -168,6 +161,7 @@ Window {
             anchors.bottom: island_3.top
             anchors.right: main_map.right
             anchors.margins: 100
+
             TextField{
                 text: "TRADE HISTORY"
                 readOnly: true

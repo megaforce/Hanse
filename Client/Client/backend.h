@@ -44,6 +44,8 @@ public:
 		QObject::connect(papp, SIGNAL(aboutToQuit()), this, SLOT(cleanup()));
 	}
 
+	void log(const QString &s);
+
 
 	QString foodRes();
 	QString woodRes();

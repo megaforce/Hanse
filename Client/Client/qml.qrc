@@ -11,6 +11,7 @@
         <file>Pending_Trade_Form.qml</file>
         <file>Round_Timer.qml</file>
         <file>End_Game.qml</file>
+        <file>Trade_history.qml</file>
     </qresource>
     <qresource prefix="/File">
         <file>image/ship.png</file>

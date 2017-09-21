@@ -152,6 +152,30 @@ Window {
         width: parent.width;
         height: parent.height;
         source: "/File/image/Sea.png";
+        Rectangle{
+            width: main_map.width /8
+            height: main_map.height /4
+            anchors.bottom: island_3.top
+            anchors.right: main_map.right
+            anchors.margins: 100
+
+                ScrollView {
+                    id: view
+                    anchors.fill: parent
+                    TextField{
+                        text: "TRADE HISTORY"
+                        readOnly: true
+                        width: parent.width
+                        height: parent.height/8
+
+                    }
+                    TextArea {
+                        id: trade_history_text
+                        text: ""
+                    }
+                }
+
+        }
         Button{
             id: display_pt
             visible: false;

@@ -62,9 +62,8 @@ Window {
     {
         var old_chat;
         old_chat = trade_history_text.text;
-        var tmp = old_chat.concat("["+turn+"; "+timer_text.text+"] ");
+        var tmp = old_chat.concat("["+turn+"("+timer_text.text+"s)] ");
         tmp = tmp.concat(body+"\n");
-//        var tmp = old_chat.concat("body");
         trade_history_text.text = tmp;
         console.log(tmp);
     }

@@ -17,6 +17,8 @@ BackEnd::BackEnd(QObject *parent) :
 	timer = new QTimer();
 	connect(timer, SIGNAL(timeout()), this, SLOT(sec_passed()));
 
+	turnCount = 1;
+
 	isTurnActive = false;
 	tradeData["type"] = static_cast<int>(codes_t::TRADE_REQUEST);
 
@@ -206,6 +208,8 @@ auto BackEnd::endOfTurn(const QByteArray &data) -> void
 
 	timer->stop();
 	QMetaObject::invokeMethod(pqmain, "reset_timer");
+
+	++turnCount;
 
 	qDebug() << "endOfTurn";
 }

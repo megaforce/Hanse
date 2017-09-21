@@ -89,6 +89,7 @@ private:
 	qint16 currTrade;
 
 	QTimer *timer;
+	qint8 turnCount;
 };
 
 #endif // BACKEND_H

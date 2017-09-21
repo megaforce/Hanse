@@ -9,12 +9,14 @@ class Stats : public QObject
 public:
 	explicit Stats(QObject *parent = nullptr);
 
+	void cheated(const qint32 &i);
+
 signals:
 
 public slots:
 
 private:
-	qint32 cheated;
+	qint32 cheatIndex;
 };
 
 #endif // STATS_H

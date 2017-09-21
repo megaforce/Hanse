@@ -57,6 +57,10 @@ auto BackEnd::sendTrade() -> void
 {
 	qDebug() << "sendTrade";
 	log("Starting trade with "+tradeData["toPlayer"].toString());
+	stat.cheated(tradeData["stoneOffered"].toInt() - tradeData["stoneGiven"].toInt());
+	stat.cheated(tradeData["foodOffered"].toInt() - tradeData["foodGiven"].toInt());
+	stat.cheated(tradeData["woodOffered"].toInt() - tradeData["woodGiven"].toInt());
+	stat.cheated(tradeData["ironOffered"].toInt() - tradeData["ironGiven"].toInt());
 	QJsonDocument doc;
 	doc.setObject(tradeData);
 	emit sendData(doc.toBinaryData());
@@ -244,6 +248,8 @@ void BackEnd::endOfGame(const QByteArray &data)
 
 	QMetaObject::invokeMethod(pqmain, "winner",
 	                          Q_ARG(QVariant, pl));
+	QMetaObject::invokeMethod(pqmain, "endgame",
+	                          Q_ARG(QVariant, "You cheated "+QString(stat.cheated())));
 }
 
 void BackEnd::sec_passed()

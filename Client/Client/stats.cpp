@@ -6,9 +6,9 @@ Stats::Stats(QObject *parent) :
 
 }
 
-void Stats::cheated(const qint32 &i)
+qint32 Stats::cheated(const qint32 &i)
 {
-	cheatIndex += i;
+	return cheatIndex += i;
 }
 
 

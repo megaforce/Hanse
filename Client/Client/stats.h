@@ -9,7 +9,7 @@ class Stats : public QObject
 public:
 	explicit Stats(QObject *parent = nullptr);
 
-	void cheated(const qint32 &i);
+	qint32 cheated(const qint32 &i = 0);
 
 signals:
 

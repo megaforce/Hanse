@@ -67,6 +67,10 @@ Window {
         trade_history_text.text = tmp;
         console.log(tmp);
     }
+    function endgame(text)
+    {
+        end_statistics.text = text;
+    }
 
     Map{
         id:endgame
@@ -80,12 +84,41 @@ Window {
                 id: end_game_text
                 visible: true
                 anchors.centerIn: parent
+                readOnly: true
                 text:" HAS WON! CONGRATULATIONS"
             }
+        }
+        Rectangle{
+            width: endgame.width /6
+            height: endgame.height /1.5
+            anchors.top: endgame.top
+            anchors.right: endgame.right
+            anchors.margins: 100
+            anchors.topMargin: 200
+            anchors.bottomMargin: 10
+            ScrollView {
+                id: view_end
+                anchors.fill: parent
+                TextField{
+                    text: "STATISTICS"
+                    readOnly: true
+                    width: parent.width
+                    height: parent.height/12
+                    anchors.bottom: parent.top
+                    anchors.left: parent.left
+                }
+                TextArea {
+                    id: end_statistics
+                    text: ""
+                    readOnly: true;
+                }
+            }
+
         }
     }
     Map{
         id: main_menu;
+        //visible: false
         width: parent.width;
         source: "/File/image/background.png";
         height: parent.height;
@@ -547,4 +580,5 @@ Window {
             }
         }
     }
+
 }

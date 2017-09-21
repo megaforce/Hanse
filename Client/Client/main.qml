@@ -96,17 +96,18 @@ Window {
             anchors.margins: 100
             anchors.topMargin: 200
             anchors.bottomMargin: 10
+            TextField{
+                text: "STATISTICS"
+                readOnly: true
+                width: parent.width
+                height: parent.height/12
+                anchors.bottom: parent.top
+                anchors.left: parent.left
+            }
             ScrollView {
                 id: view_end
                 anchors.fill: parent
-                TextField{
-                    text: "STATISTICS"
-                    readOnly: true
-                    width: parent.width
-                    height: parent.height/12
-                    anchors.bottom: parent.top
-                    anchors.left: parent.left
-                }
+
                 TextArea {
                     id: end_statistics
                     text: ""

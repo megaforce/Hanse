@@ -19,6 +19,8 @@ BackEnd::BackEnd(QObject *parent) :
 
 	turnCount = 1;
 
+	stat = new Stats();
+
 	isTurnActive = false;
 	tradeData["type"] = static_cast<int>(codes_t::TRADE_REQUEST);
 

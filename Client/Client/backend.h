@@ -14,6 +14,7 @@
 #include "resources.h"
 #include "globalvariables.h"
 #include "trade.h"
+#include "stats.h"
 
 extern QGuiApplication *papp;
 extern QObject *pqmain;
@@ -87,6 +88,8 @@ private:
 
 	QList<Trade *> trades;
 	qint16 currTrade;
+
+	Stats stat;
 
 	QTimer *timer;
 	qint8 turnCount;

@@ -7,7 +7,8 @@ SOURCES += main.cpp \
     backend.cpp \
     hanseserverthread.cpp \
     resources.cpp \
-    trade.cpp
+    trade.cpp \
+    stats.cpp
 
 
 RESOURCES += qml.qrc
@@ -39,6 +40,7 @@ HEADERS += \
     globalvariables.h \
     hanseserverthread.h \
     resources.h \
-    trade.h
+    trade.h \
+    stats.h
 
 DISTFILES +=

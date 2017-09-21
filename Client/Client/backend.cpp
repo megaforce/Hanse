@@ -145,7 +145,7 @@ auto BackEnd::setState(const QByteArray &data) -> void
 	// returns if data is not meant for state
 	if(static_cast<codes_t>(stateData["type"].toInt()) != codes_t::STATE_DATA) return;
 
-	log("Starting turn "+currTrade);
+	log("Starting turn " + QString::number(currTrade));
 
 	// retrieve inventory from data
 	inventory.wood = stateData["amountWood"].toInt();
@@ -181,7 +181,7 @@ auto BackEnd::recieveTradeOffer(const QByteArray &data) -> void
 	if(static_cast<codes_t>(tradeData["type"].toInt()) != codes_t::TRADE_OFFER) return;
 
 	qDebug() << "Got a trade offer!";
-	log("Got a trade offer from "+tradeData["sender"].toString());
+	log("Got a trade offer from " + tradeData["sender"].toString());
 	Resources amountOffered;
 	Resources amountRequested;
 	qint16    tradeID;
@@ -214,6 +214,7 @@ auto BackEnd::endOfTurn(const QByteArray &data) -> void
 	// returns if data is not meant for state
 	if(static_cast<codes_t>(stateData["type"].toInt()) != codes_t::TURN_END) return;
 	isTurnActive = false;
+	log("End of turn " + QString::number(turnCount));
 
 	timer->stop();
 	QMetaObject::invokeMethod(pqmain, "reset_timer");
@@ -221,7 +222,6 @@ auto BackEnd::endOfTurn(const QByteArray &data) -> void
 	++turnCount;
 
 	qDebug() << "endOfTurn";
-	log("End of turn "+QString(turnCount));
 }
 
 void BackEnd::endOfGame(const QByteArray &data)
@@ -249,7 +249,7 @@ void BackEnd::endOfGame(const QByteArray &data)
 	QMetaObject::invokeMethod(pqmain, "winner",
 	                          Q_ARG(QVariant, pl));
 	QMetaObject::invokeMethod(pqmain, "endgame",
-	                          Q_ARG(QVariant, "You cheated "+QString(stat->cheated())));
+	                          Q_ARG(QVariant, "You cheated " + QString::number(stat->cheated())));
 }
 
 void BackEnd::sec_passed()
@@ -277,7 +277,7 @@ void BackEnd::acceptTrade(
 		{"ironAmount", iron.toInt()},
 		{"foodAmount", food.toInt()}
 	};
-	log("Accepted trade");
+	log("Accepted trade from " + tradeInfo("from"));
 	QJsonDocument doc;
 	doc.setObject(tradeDetails);
 	emit sendData(doc.toBinaryData());
@@ -298,7 +298,7 @@ void BackEnd::denyTrade()
 		{"type", static_cast<int>(codes_t::TRADE_DENY)},
 		{"tradeID", trades.at(currTrade)->getTradeID()},
 	};
-	log("Denied trade");
+	log("Denied trade from " + tradeInfo("from"));
 	QJsonDocument doc;
 	doc.setObject(tradeDetails);
 	emit sendData(doc.toBinaryData());

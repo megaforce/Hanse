@@ -58,6 +58,10 @@ Window {
     {
         timer_text.text = '60';
     }
+    function new_entry(s)
+    {
+        console.log(s);
+    }
 
 
     Map{

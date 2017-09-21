@@ -107,6 +107,14 @@ auto BackEnd::getPlayer(const qint32 &pl) -> QString
 	return players.at(pl);
 }
 
+auto BackEnd::log(const QString &s) -> void
+{
+
+
+	QMetaObject::invokeMethod(pqmain, "new_entry",
+	                          Q_ARG(QString, s));
+}
+
 auto BackEnd::startGame(const QString &uname) -> void
 {
 	username = uname;

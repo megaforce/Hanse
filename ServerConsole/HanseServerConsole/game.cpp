@@ -61,7 +61,7 @@ void Game::sendGameOver()
 void Game::startGame()
 {
     isGameOver = false;
-    logConsole << "Game starting!\n************************************************************";
+    logConsole << "************************************************************\nGame starting!";
     startTurn();
 }
 
@@ -139,10 +139,10 @@ void Game::endTurn()
     foreach(Player* player, players)
     {
         Resources takeFood;
-        takeFood.wood = (i==0)?-100:200;
-        takeFood.stone= (i==3)?-100:200;
-        takeFood.iron = (i==1)?-100:200;
-        takeFood.food = (i==2)?-100:200;
+        takeFood.wood = (i==0)?-200:100;
+        takeFood.stone= (i==3)?-200:100;
+        takeFood.iron = (i==1)?-200:100;
+        takeFood.food = (i==2)?-200:100;
         ++i;
         player->takeResources(takeFood);
 

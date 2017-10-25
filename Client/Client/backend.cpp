@@ -130,9 +130,9 @@ auto BackEnd::startGame(const QString &uname) -> void
 	username = uname;
 	connect(this, SIGNAL(sendData(QByteArray)), serverConnection, SLOT(sendData(QByteArray)));
 #ifndef LOCAL_SERVER
-	emit startConnection(QString("93.103.236.159"), username);
+	emit startConnection(QString(""), username);
 #else
-	emit startConnection(QString("192.168.0.2"), username);
+	emit startConnection(QString(""), username);
 #endif
 }
 
